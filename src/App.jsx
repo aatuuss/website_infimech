@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+
+import Servis from './app/Servis';
+import Specialities from './app/Specialities';
+import Experince from "./app/Experince";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h3 className="font-bold underline text-center">
-        Hello, Infimech!
-      </h3>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/servis" element={<Servis />} />
+        <Route path="/specialities" element={<Specialities />} />
+        <Route path="/experince" element={<Experince />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
