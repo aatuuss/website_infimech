@@ -6,14 +6,10 @@ import Specialities from './app/Specialities';
 import Experince from "./app/Experince";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/servis" element={<Servis />} />
-        <Route path="/specialities" element={<Specialities />} />
-        <Route path="/experince" element={<Experince />} />
-      </Routes>
-    </BrowserRouter>
+  return(
+    <div>
+      
+    </div>
   );
 }
 
