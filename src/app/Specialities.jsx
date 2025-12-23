@@ -104,7 +104,7 @@ const Specialities = () => {
             }}
           >
             <p style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '500', margin: 0, textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
-              We deliver end-to-end CFD expertise—from fluid-thermal analysis and advanced 
+              We deliver end-to-end CFD expertise—from fluid-thermal analysi and advanced 
               industrial applications to solver optimization, OpenFOAM customization, and 
               validation—ensuring efficient, accurate, and data-driven engineering solutions.
             </p>

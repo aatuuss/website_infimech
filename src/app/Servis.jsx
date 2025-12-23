@@ -38,7 +38,7 @@ export default function Servis() {
     },
     {
       title: 'SOFTWARE PROFICIENCY',
-      description: 'Skilled in CFD tools like OpenFOAM, including meshing (SnappyHexMesh) and visualization (ParaView).',
+      description: 'Skiled in CFD tools like OpenFOAM, including meshing (SnappyHexMesh) and visualization (ParaView).',
       img: '/img/7.jpg' 
     }
   ];
