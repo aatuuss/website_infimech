@@ -285,7 +285,7 @@ const Experience = () => {
       {/* SECTION 2: EXPERIENCE CONTENT */}
       <div style={{ backgroundColor: '#ffffff', padding: '50px 10%', fontFamily: 'sans-serif' }}>
         <h2 style={{ textAlign: 'center', fontSize: '38px', fontWeight: '900', marginBottom: '80px', letterSpacing: '1px', color: '#000' }}>
-          OUR EXPERIENCE EVERY YEAR
+          OUR EXPERIENCE YEAR TO YEAR
         </h2>
 
         <div style={{ display: 'flex', gap: '60px', alignItems: 'flex-start' }}>
