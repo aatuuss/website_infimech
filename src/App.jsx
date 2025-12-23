@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import './App.css'
+import Home from "./app/Home";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <h3 className="font-bold underline text-center">
-        Hello, Infimech!
-      </h3>
-    </>
-  )
-}
+    <div className="min-h-screen relative bg-slate-50">
 
-export default App
+      {/* SIDEBAR (FIXED, FLOATING) */}
+      <Sidebar />
+
+      {/* MAIN CONTENT */}
+      <main className="min-h-screen">
+        {/* HOME — FULL SCREEN */}
+        <Home />
+
+        {/* FOOTER — FULL WIDTH */}
+        <Footer />
+      </main>
+
+    </div>
+  );
+}
