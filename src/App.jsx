@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
@@ -22,6 +22,7 @@ export default function App() {
         {/* MAIN CONTENT */}
         <main className="min-h-screen">
           <Routes>
+            <Route path="/" element={<Navigate to="/Home" replace />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Servis" element={<Servis />} />
