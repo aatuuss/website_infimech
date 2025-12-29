@@ -9,7 +9,7 @@ const Specialities = () => {
       ========================================= */}
       <div 
         style={{
-          backgroundImage: 'url("/img/specialities.jpg")', 
+          backgroundImage: 'url("/img/specialities.jpeg")', 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '100vh',
@@ -29,7 +29,7 @@ const Specialities = () => {
           href="/"
           style={{
             position: 'absolute',
-            top: '0.9px',   
+            top: '56px',   
             left: '5%',  
             zIndex: 10,
             textDecoration: 'none',
@@ -37,10 +37,10 @@ const Specialities = () => {
           }}
         >
           <img
-            src="/img/logo-baru-removebg.png"
+            src="/img/logo2.png"
             alt="Infimech logo"
             style={{
-              width: '240px', 
+              width: '250px', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'

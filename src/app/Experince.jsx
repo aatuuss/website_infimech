@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const Experience = () => {
-  const bgImage = "/img/6.jpg"; 
+const Experince = () => {
+  const bgImage = "/img/experince.jpeg"; 
   
   const [selectedKey, setSelectedKey] = useState('2019');
   const [showSub2021, setShowSub2021] = useState(false);
@@ -234,7 +234,7 @@ const Experience = () => {
           className="hero-logo-link"
           style={{
             position: 'absolute',
-            top: '0.9px',   
+            top: '56px',   
             left: '5%',  
             zIndex: 10,
             textDecoration: 'none',
@@ -242,11 +242,11 @@ const Experience = () => {
           }}
         >
           <img
-            src="/img/logo-baru-removebg.png"
+            src="/img/logo2.png"
             alt="Infimech logo"
             className="hero-logo-img"
             style={{
-              width: '240px', 
+              width: '250px', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'
@@ -389,4 +389,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Experince;

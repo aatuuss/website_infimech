@@ -1,6 +1,156 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const SLIDES1 = [
+  // ===== SLIDE 1 =====
+  [
+    {
+      id: 1,
+      title: "High-Performance & Accuracy Advantages",
+      image: "/img/High-Performance & Accuracy Advantages.jpg",
+    },
+    {
+      id: 2,
+      title: "CFD Tools & Numerical Modeling Expertise",
+      image: "/img/CFD Tools & Numerical Modeling Expertise.jpg",
+    },
+    {
+      id: 3,
+      title: "Fluid Flow & Turbulence Modeling Expertise",
+      image: "/img/Fluid Flow & Turbulence Modeling Expertise.jpg",
+    },
+  ],
+
+  // ===== SLIDE 2 =====
+  [
+    {
+      id: 4,
+      title: "Heat Transfer & Thermal Management Expertise",
+      image: "/img/Heat Transfer & Thermal Management Expertise.jpg",
+    },
+    {
+      id: 5,
+      title: "Multiphase Flow Simulation Expertise",
+      image: "/img/Multiphase Flow Simulation Expertise.jpg",
+    },
+    {
+      id: 6,
+      title: "Combustion & Chemical Reaction Simulation Expertise",
+      image: "/img/Combustion & Chemical Reaction Simulation Expertise.jpg",
+    },
+  ],
+];
+
+const CLIENT_LOGOS = [
+  { id: 1, src: "/img/client/arup.png", alt: "Arup", url: "https://www.arup.com" },
+  { id: 2, src: "/img/client/brin.png", alt: "BRIN", url: "https://www.brin.go.id" },
+  { id: 3, src: "/img/client/cameron.png", alt: "Cameron", url: "https://www.slb.com/onesubs/cameron" },
+  { id: 4, src: "/img/client/casale.png", alt: "Casale", url: "https://www.casale.ch" },
+  { id: 5, src: "/img/client/cba-energy.png", alt: "CBA Energy", url: "https://www.cba-energy.com" },
+  { id: 6, src: "/img/client/chandra-asri.png", alt: "Chandra Asri", url: "https://www.cap.co.id" },
+  { id: 7, src: "/img/client/chevron.png", alt: "Chevron", url: "https://www.chevron.com" },
+  { id: 8, src: "/img/client/dishub.png", alt: "Dishub", url: "https://dishub.jakarta.go.id" },
+  { id: 9, src: "/img/client/dss.png", alt: "DSS", url: "https://www.dss.co.id" },
+  { id: 10, src: "/img/client/indomarine.png", alt: "Indomarine", url: "https://www.indomarine.co.id" },
+
+  { id: 11, src: "/img/client/itb.png", alt: "ITB", url: "https://www.itb.ac.id" },
+  { id: 12, src: "/img/client/its.png", alt: "ITS", url: "https://www.its.ac.id" },
+  { id: 13, src: "/img/client/jaya-teknik.png", alt: "Jaya Teknik", url: "https://www.jayateknik.com" },
+  { id: 14, src: "/img/client/kementerian-perindustrian-republik-indonesia.png", alt: "Kemenperin", url: "https://www.kemenperin.go.id" },
+  { id: 15, src: "/img/client/kilang-pertamina-internasional.png", alt: "Kilang Pertamina", url: "https://www.pertamina.com" },
+  { id: 16, src: "/img/client/kpi.png", alt: "KPI", url: "https://www.kpi.co.id" },
+  { id: 17, src: "/img/client/kraft.png", alt: "Kraft", url: "https://www.kraftheinz.com" },
+  { id: 18, src: "/img/client/lerindro.png", alt: "Lerindro", url: "https://www.lerindro.com" },
+  { id: 19, src: "/img/client/lipi.png", alt: "LIPI", url: "https://www.lipi.go.id" },
+  { id: 20, src: "/img/client/matin-perkasa.png", alt: "Matin Perkasa", url: "https://www.matinperkasa.com" },
+
+  { id: 21, src: "/img/client/meinhardt.png", alt: "Meinhardt", url: "https://www.meinhardtgroup.com" },
+  { id: 22, src: "/img/client/pertamina-hulurokan.png", alt: "Pertamina Hulu Rokan", url: "https://www.phr.pertamina.com" },
+  { id: 23, src: "/img/client/pertamina-kalimantan.png", alt: "Pertamina Kalimantan", url: "https://www.pertamina.com" },
+  { id: 24, src: "/img/client/pertamina.png", alt: "Pertamina", url: "https://www.pertamina.com" },
+  { id: 25, src: "/img/client/pln.png", alt: "PLN", url: "https://web.pln.co.id/" },
+  { id: 26, src: "/img/client/politeknik-perkebunan-yogyakarta.png", alt: "Politeknik Perkebunan Yogyakarta", url: "https://siakad.polteklpp.ac.id" },
+  { id: 27, src: "/img/client/PPSDM-migas.png", alt: "PPSDM Migas", url: "https://ppsdmmigas.esdm.go.id" },
+  { id: 28, src: "/img/client/pt-adijaya-karya-makmur.png", alt: "PT Adijaya Karya Makmur", url: "https://www.adijayakarya.com" },
+  { id: 29, src: "/img/client/pt-alfa-semesta.png", alt: "PT Alfa Semesta", url: "https://www.alfasemesta.co.id" },
+  { id: 30, src: "/img/client/pt-bintang-timur-anugerah.png", alt: "PT Bintang Timur Anugerah", url: "https://www.bta.co.id" },
+
+  { id: 31, src: "/img/client/pt-boma-bisma-indra.png", alt: "PT Boma Bisma Indra", url: "https://ptbbi.co.id/" },
+  { id: 32, src: "/img/client/pupuk-kaltim.png", alt: "Pupuk Kaltim", url: "https://www.pupukkaltim.com" },
+  { id: 33, src: "/img/client/puspetindo.png", alt: "Puspetindo", url: "https://puspetindo.com/" },
+  { id: 34, src: "/img/client/reka-energy.png", alt: "Reka Energy", url: "https://rekaenergi.com/" },
+  { id: 35, src: "/img/client/schlumber.png", alt: "Schlumberger", url: "https://www.slb.com/" },
+  { id: 36, src: "/img/client/simtex-mechatronic.png", alt: "Simtex Mechatronic", url: "https://www.simtex.co.id/" },
+  { id: 37, src: "/img/client/sinarmas.png", alt: "Sinarmas", url: "https://www.sinarmas.com/" },
+  { id: 38, src: "/img/client/taci.png", alt: "TACI", url: "https://tacindonesia.id/index/" },
+  { id: 39, src: "/img/client/takenaka.png", alt: "Takenaka", url: "http://takenaka.asia/indonesia" },
+  { id: 40, src: "/img/client/tata.png", alt: "Tata", url: "http://tatamotors.co.id/" },
+
+  { id: 41, src: "/img/client/tentara-nasional-angkatan-udara.png", alt: "TNI AU", url: "https://www.tni-au.mil.id" },
+  { id: 42, src: "/img/client/timas.png", alt: "Timas", url: "https://www.timas.com/" },
+  { id: 43, src: "/img/client/tripatra.png", alt: "Tripatra", url: "https://www.tripatra.com" },
+  { id: 44, src: "/img/client/ugm.png", alt: "UGM", url: "https://www.ugm.ac.id" },
+  { id: 46, src: "/img/client/um.png", alt: "UM", url: "https://um.ac.id/" },
+  { id: 47, src: "/img/client/umm.png", alt: "UMM", url: "https://www.umm.ac.id" },
+  { id: 48, src: "/img/client/uns.png", alt: "UNS", url: "https://uns.ac.id/id/" },
+  { id: 49, src: "/img/client/wijaya-karya.png", alt: "Wijaya Karya", url: "https://www.wika.co.id" },
+];
+
+/* =========================
+   SLIDE DATA (8 SLIDES)
+========================= */
+const SLIDES = [
+  {
+    title: "Oil & Gas Companies",
+    image: "/img/servis-hero.jpg",
+  },
+  {
+    title: "Power Generation Companies",
+    image: "/img/matin.jpg",
+  },
+  {
+    title: "Petrochemical and Chemical Processing Plants",
+    image: "/img/4.jpg",
+  },
+  {
+    title: "Mining Companies",
+    image: "/img/carl.jpg",
+  },
+  {
+    title: "EPC Contractors",
+    image: "/img/mohamed.jpg",
+  },
+  {
+    title: "Manufacturing Industries",
+    image: "/img/manufacturing.png",
+  },
+  {
+    title: "Renewable Energy",
+    image: "/img/energy.png",
+  },
+];
 
 export default function Home() {
+  // separate indices so sliders don't interfere
+  const [serviceIdx, setServiceIdx] = useState(0);
+  const [industryIdx, setIndustryIdx] = useState(0);
+  const [expIdx, setExpIdx] = useState(0);
+
+  const totalIndustry = SLIDES.length;
+  const totalExp = SLIDES1.length;
+
+  const prevIndustry = () =>
+    setIndustryIdx((i) => (i === 0 ? totalIndustry - 1 : i - 1));
+
+  const nextIndustry = () =>
+    setIndustryIdx((i) => (i === totalIndustry - 1 ? 0 : i + 1));
+
+  const prevExp = () =>
+    setExpIdx((i) => (i === 0 ? totalExp - 1 : i - 1));
+
+  const nextExp = () =>
+    setExpIdx((i) => (i === totalExp - 1 ? 0 : i + 1));
+  
   const services = [
     {
       title: "Regular Engineering Service",
@@ -59,13 +209,12 @@ export default function Home() {
     },
   ];
 
-  const [active, setActive] = useState(0);
   const angle = 360 / services.length;
 
   const outerRadius = 120;
   const innerRadius = 102;
 
-  const startAngle = active * angle;
+  const startAngle = serviceIdx * angle;
   const endAngle = startAngle + angle;
 
   const polar = (cx, cy, r, deg) => {
@@ -83,7 +232,7 @@ export default function Home() {
     return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 0 ${e.x} ${e.y}`;
   };
 
-  const title = services[active].title.toUpperCase();
+  const title = services[serviceIdx].title.toUpperCase();
   const splitIndex =
     title.length > 22 ? Math.ceil(title.length / 2) : title.length;
 
@@ -136,7 +285,7 @@ export default function Home() {
 
             <button className="group w-fit rounded-full bg-white px-10 py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50">
               <span className="flex items-center gap-2">
-                About Us
+                Contact
                 <svg
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -294,7 +443,7 @@ export default function Home() {
       </section>
 
       {/* ================= OUR SERVICES ================= */}
-      <section className="relative bg-white py-5">
+      <section className="relative bg-white py-1">
         <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
           OUR SERVICES
         </h2>
@@ -338,7 +487,7 @@ export default function Home() {
           const start = i * angle;
           const end = start + angle;
 
-          return i === active
+          return i === serviceIdx
             ? `${s.color} ${start}deg ${end}deg`
             : `transparent ${start}deg ${end}deg`;
         })
@@ -361,7 +510,7 @@ export default function Home() {
                   />
                 </defs>
 
-                <text fill="white" fontSize="12" fontWeight="600">
+                <text fill="white" fontSize="17" fontWeight="600">
                   <textPath
                     href="#arcOuter"
                     startOffset="50%"
@@ -372,7 +521,7 @@ export default function Home() {
                 </text>
 
                 {line2 && (
-                  <text fill="white" fontSize="11" fontWeight="600">
+                  <text fill="white" fontSize="20" fontWeight="600">
                     <textPath
                       href="#arcInner"
                       startOffset="50%"
@@ -406,7 +555,7 @@ export default function Home() {
     "
   >
     <h3 className="text-xl font-semibold mb-4 text-[#3B6C8D] shrink-0">
-      {services[active].title}
+      {services[serviceIdx].title}
     </h3>
 
     <ul
@@ -420,7 +569,7 @@ export default function Home() {
         flex-1
       "
     >
-      {services[active].items.map((item, i) => (
+      {services[serviceIdx].items.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
     </ul>
@@ -429,7 +578,7 @@ export default function Home() {
   <div className="flex gap-6">
     <button
       onClick={() =>
-        setActive((p) => (p === 0 ? services.length - 1 : p - 1))
+        setServiceIdx((p) => (p === 0 ? services.length - 1 : p - 1))
       }
       className="w-12 h-12 rounded-full border hover:bg-gray-100"
     >
@@ -437,7 +586,7 @@ export default function Home() {
     </button>
 
     <button
-      onClick={() => setActive((p) => (p + 1) % services.length)}
+      onClick={() => setServiceIdx((p) => (p + 1) % services.length)}
       className="w-12 h-12 rounded-full border hover:bg-gray-100"
     >
       →
@@ -446,6 +595,254 @@ export default function Home() {
 </div>
         </div>
       </section>
+      
+      {/* ================= INDUSTRY CATEGORY ================= */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* LOGO BACKGROUND */}
+        <img
+          src="/img/Logo1.png"
+          alt="Logo Background"
+          className="
+      absolute
+      -right-56
+      top-1/2
+      w-[700px]
+      -translate-y-1/2
+      opacity-19
+      pointer-events-none
+      z-0
+    "
+        />
+        
+        <div className="mx-auto max-w-7xl px-8 text-center relative z-10">
+
+          {/* ===== TITLE ===== */}
+          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
+            INDUSTRY CATEGORY
+          </h2>
+
+          {/* ===== SLIDER ===== */}
+          <div className="relative flex items-center justify-center">
+            {/* LEFT SIDE - 3 SLIDES */}
+            <div className="flex items-center mr-[-40px]">
+              {[...Array(3)].map((_, offset) => {
+                const index =
+                  (industryIdx - 3 + offset + SLIDES.length) % SLIDES.length;
+                const slide = SLIDES[index];
+                const sizes = ["w-32 h-32", "w-40 h-40", "w-56 h-56"];
+
+                return (
+                  <div
+                    key={`left-${offset}`}
+                    className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} -mr-6 transition-all hover:opacity-80`}
+                  >
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* CENTER - ACTIVE SLIDE */}
+            <div className="relative z-50 w-72 h-72 flex-shrink-0 overflow-hidden rounded-[32px]">
+              <img
+                src={SLIDES[industryIdx].image}
+                alt={SLIDES[industryIdx].title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-center px-6 pb-4 pt-10 bg-gradient-to-t from-[#274C77]/80 via-[#274C77]/60 to-transparent">
+                <h3 className="text-lg font-semibold leading-snug text-white text-center">
+                  {SLIDES[industryIdx].title}
+                </h3>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - 3 SLIDES */}
+            <div className="flex items-center ml-[-40px]">
+              {[...Array(3)].map((_, offset) => {
+                const index = (industryIdx + 1 + offset) % SLIDES.length;
+                const slide = SLIDES[index];
+                const sizes = ["w-56 h-56", "w-40 h-40", "w-32 h-32"];
+                const zOrder = ["z-30", "z-20", "z-10"];
+
+                return (
+                  <div
+                    key={`right-${offset}`}
+                    className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} ${zOrder[offset]} -ml-6 transition-all hover:opacity-80`}
+                  >
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ===== NAVIGATION ===== */}
+          <div className="mt-10 flex items-center justify-center gap-6">
+            <button onClick={prevIndustry} className="text-3xl">
+              ‹
+            </button>
+
+            <div className="flex gap-2">
+              {SLIDES.map((_, i) => (
+                <span
+                  key={i}
+                  className={`h-2 w-2 rounded-full ${
+                    i === industryIdx ? "bg-[#274C77]" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button onClick={nextIndustry} className="text-3xl">
+              ›
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CLIENT LOGOS ================= */}
+      <section className="bg-white py-1">
+      <div className="mx-auto max-w-7xl px-6">
+
+        {/* HEADER */}
+        <div className="text-center mb-10">
+          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-5">
+            OUR CLIENTS
+          </h2>
+
+          <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-sm md:text-base">
+            Trusted by a diverse range of energy, petrochemical, and power sector
+            partners for precision-engineered metering and process solutions.
+          </p>
+        </div>
+
+        {/* LOGO GRID */}
+        <div className="
+          grid
+          grid-cols-2
+          sm:grid-cols-3
+          md:grid-cols-4
+          lg:grid-cols-6
+          gap-x-1
+          gap-y-10
+          items-center
+          justify-items-center
+        ">
+          {CLIENT_LOGOS.map((logo) => (
+            <a
+              key={logo.id}
+              href={logo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                w-[120px]
+                h-[80px]
+                flex
+                items-center
+                justify-center
+                grayscale
+                hover:grayscale-0
+                transition
+                duration-300
+                cursor-pointer
+              "
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-full max-w-full object-contain"
+              />
+            </a>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+      {/* ================= KEY EXPERIENCES ================= */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-8">
+
+          {/* ===== TITLE ===== */}
+          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
+            KEY EXPERIENCES
+          </h2>
+
+
+          {/* CARD SLIDER */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {SLIDES1[expIdx % SLIDES1.length].map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-[24px] overflow-hidden shadow-sm flex flex-col"
+              >
+                {/* IMAGE */}
+                <div className="h-[200px] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* CONTENT */}
+                <div className="flex flex-col p-6 flex-1">
+                  <h3 className="text-[#274C77] text-lg font-medium leading-snug pb-4">
+                    {item.title}
+                  </h3>
+
+                  <div className="border-b border-gray-300 mb-auto"></div>
+
+                  <div className="pt-4">
+                    <Link
+                      to="/experiences"
+                      className="text-sm text-[#274C77] font-medium hover:underline"
+                    >
+                      Explore More →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* NAVIGATION */}
+          <div className="mt-10 flex items-center gap-6">
+            <button
+              onClick={prevExp}
+              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition"
+            >
+              ←
+            </button>
+
+            <div className="relative w-24 h-[2px] bg-gray-300 overflow-hidden">
+              <div
+                className="absolute top-0 left-0 h-full bg-black transition-all duration-300"
+                style={{
+                  width: `${((expIdx + 1) / totalExp) * 100}%`,
+                }}
+              />
+            </div>
+
+            <button
+              onClick={nextExp}
+              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition"
+            >
+              →
+            </button>
+          </div>
+
+        </div>
+      </section>
+
     </section>
   );
 }

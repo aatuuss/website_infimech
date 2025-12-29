@@ -229,7 +229,7 @@ export default function Servis() {
           className="hero-logo-link"
           style={{
             position: 'absolute',
-            top: '0.9px',   
+            top: '56px',   
             left: '5%',  
             zIndex: 10,
             textDecoration: 'none',
@@ -237,11 +237,11 @@ export default function Servis() {
           }}
         >
           <img
-            src="/img/logo-baru-removebg.png"
+            src="/img/logo2.png"
             alt="Infimech logo"
             className="hero-logo-img"
             style={{
-              width: '240px', 
+              width: '250px', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'
