@@ -123,11 +123,11 @@ const Specialities = () => {
           }}
         >
           <img
-            src="/img/logo-baru-removebg.png"
+            src="/img/logo2.png"
             alt="Infimech logo"
             className="logo-img"
             style={{
-              width: '240px', 
+              width: 'clamp(120px, 15vw, 250px)', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'
@@ -183,7 +183,7 @@ const Specialities = () => {
             className="hero-description"
             style={{
               backgroundColor: 'rgba(120, 145, 190, 0.4)', 
-              padding: '60px 40px 40px 40px', 
+              padding: 'clamp(30px, 5vw, 60px) clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px)', 
               borderRadius: '20px',
               backdropFilter: 'blur(10px)',
               WebkitBackdropFilter: 'blur(10px)',
@@ -195,7 +195,7 @@ const Specialities = () => {
               zIndex: 1
             }}
           >
-            <p style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '500', margin: 0, textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
+            <p style={{ fontSize: 'clamp(13px, 2vw, 16px)', lineHeight: '1.6', fontWeight: '500', margin: 0, textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
               We deliver end-to-end CFD expertise—from fluid-thermal analysis and advanced 
               industrial applications to solver optimization, OpenFOAM customization, and 
               validation—ensuring efficient, accurate, and data-driven engineering solutions.
