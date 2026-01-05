@@ -57,13 +57,12 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold text-[#3B6C8D] text-sm sm:text-base">Yogyakarta Office</p>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Jl.%20Kaliurang%20KM%204.5%20Gg.%20Siti%20Somya%2C%20Ruko%20Omah%20Mbarek%20No.%202%2C%20Sinduwadi%2C%20Mlati%2C%20Sleman%2C%20Yogyakarta%2C%2055281"
+                    href="https://www.google.com/maps/search/?api=1&query=Jl.%20Kaliurang%20km%204%2C%20Gg.%20Siti%20Sonya%20No.10%20B%205%2C%20Pogung%20Kidul%2C%20Sinduadi%2C%20Kec.%20Mlati%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm text-gray-600 hover:text-[#3B6C8D] hover:underline leading-tight"
                   >
-                    Jl. Kaliurang KM 4.5 Gg. Siti Somya, Ruko Omah Mbarek No. 2, Sinduwadi,
-                    Mlati, Sleman, Yogyakarta, 55281
+                    Jl. Kaliurang km 4, Gg. Siti Sonya No.10 B 5, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
                   </a>
                 </div>
               </div>
@@ -80,13 +79,12 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold text-[#3B6C8D] text-sm sm:text-base">Malang Office</p>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Jl.%20Banyupatih%20No.%207%2C%20Bunderrejo%2C%20Kec.%20Blimbing%2C%20Kota%20Malang%2C%20Jawa%20Timur%2C%20Indonesia"
+                    href="https://www.google.com/maps/search/?api=1&query=Jl.%20Mayang%20No.08%2C%20Bunulrejo%2C%20Kec.%20Blimbing%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065123"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm text-gray-600 hover:text-[#3B6C8D] hover:underline leading-tight"
                   >
-                    Jl. Banyupatih No. 7, Bunderrejo, Kec. Blimbing, Kota Malang,
-                    Jawa Timur, Indonesia
+                    Jl. Mayang No.08, Bunulrejo, Kec. Blimbing, Kota Malang, Jawa Timur 65123
                   </a>
                 </div>
               </div>
