@@ -242,11 +242,11 @@ export default function Home() {
   return (
     <section className="bg-[#FFFFFF]">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-screen md:h-screen w-full overflow-hidden">
+      <section className="relative min-h-[65vh] md:h-screen w-full overflow-hidden">
         <img
           src="/img/about.jpg"
           alt="Hero Background"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-center"
         />
 
         <div className="pointer-events-none absolute inset-0 z-0">
