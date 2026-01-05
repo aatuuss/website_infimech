@@ -158,7 +158,7 @@ export default function Servis() {
         <div className="hero-overlay-custom" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(14, 54, 100, 0.5)', clipPath: 'polygon(0 0, 50% 0, 40% 50%, 50% 100%, 0 100%)', zIndex: 1, pointerEvents: 'none' }} />
 
         <a href="/" className="hero-logo-link" style={{ position: 'absolute', top: '56px', left: '5%', zIndex: 10 }}>
-          <img src="/img/logo-baru-removebg.png" className="hero-logo-img" alt="Logo" style={{ width: '250px', height: 'auto' }} />
+          <img src="/img/logo2.png" className="hero-logo-img" alt="Logo" style={{ width: '250px', height: 'auto' }} />
         </a>
 
         <div className="hero-content" style={{ position: 'relative', zIndex: 2, width: '55%', paddingLeft: '10rem', color: '#fff', marginTop: '7rem' }}>
