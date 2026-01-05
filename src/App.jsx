@@ -1,42 +1,36 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Servis from './app/Servis';
-import Specialities from './app/Specialities';
-import Experience from "./app/Experince";
+import Home from "./app/Home";
+import Contact from "./app/Contact";
+import Servis from "./app/Servis";
+import Specialities from "./app/Specialities";
+import Experince from "./app/Experince";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/servis" element={<Servis />} />
-        <Route path="/specialities" element={<Specialities />} />
-        <Route path="/experience" element={<Experience />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+
+import ExperiencesPage from "./app/ExperiencesPage";
+import DetailExperiencesPage from "./app/DetailExperiencesPage";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <div className="min-h-screen relative bg-slate-50">
-
-        {/* SIDEBAR */}
         <Sidebar />
 
-        {/* MAIN CONTENT */}
         <main className="min-h-screen">
           <Routes>
-            <Route path="/" element={<Navigate to="/Home" replace />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Servis" element={<Servis />} />
-            <Route path="/Specialities" element={<Specialities />} />
-            <Route path="/Experince" element={<Experince />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/servis" element={<Servis />} />
+            <Route path="/specialities" element={<Specialities />} />
+            <Route path="/experince" element={<Experince />} />
             <Route path="/experiences" element={<ExperiencesPage />} />
-            <Route path="/detailexperiences/:id" element={<DetailExperiencesPage />} />
+            <Route
+              path="/detailexperiences"
+              element={<DetailExperiencesPage />}
+            />
           </Routes>
 
           <Footer />
