@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
@@ -11,9 +12,20 @@ import Experince from "./app/Experince";
 import ExperiencesPage from "./app/experiences/page";
 import DetailExperiencesPage from "./app/detailexperiences/page";
 
+function ScrollToTop() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen relative bg-slate-50">
 
         {/* SIDEBAR */}

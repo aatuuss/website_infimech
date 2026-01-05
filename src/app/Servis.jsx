@@ -109,7 +109,7 @@ export default function Servis() {
         @media (max-width: 1100px){
           .hero-logo-img { width: 180px !important; } 
           .hero-title { font-size: 58px !important; }
-          .hero-content { width: 65% !important; padding-left: 6rem !important; }
+          .hero-content { width: 65% !important; padding-left: 4rem !important; }
         }
 
         @media (max-width: 980px){
@@ -144,29 +144,43 @@ export default function Servis() {
           }
         }
 
-        @media (max-width: 760px){
-          .servis-hero { height: 75vh !important; min-height: auto !important; }
-          .hero-logo-img { width: 140px !important; }
-          .hero-logo-link { padding: 20px !important; }
+        @media (max-width: 768px){
+          .servis-hero { height: 70vh !important; min-height: auto !important; }
+          .hero-logo-img { width: 120px !important; }
+          .hero-logo-link { padding: 16px !important; }
           
           .hero-content {
             width: 100% !important;
-            padding: 30px !important;
-            margin-top: 6rem !important;
+            padding: 20px !important;
+            margin-top: 4rem !important;
           }
-          .hero-title { font-size: 40px !important; }
+          .hero-title { font-size: 36px !important; line-height: 1.2 !important; }
+          .hero-subtitle { font-size: 14px !important; }
         }
 
         @media (max-width: 640px){
           .services-cards { grid-template-columns: 1fr !important; }
           .services-heading { font-size: 28px !important; }
-          .services-section { padding: 40px 1rem !important; }
+          .services-section { padding: 30px 16px !important; }
+          
+          .servis-hero { height: 60vh !important; }
+          .hero-title { font-size: 28px !important; }
+          .hero-logo-img { width: 100px !important; }
+          
+          .category-slider-container { max-width: 100% !important; }
+          .category-image { max-height: 250px !important; }
+        }
+
+        @media (max-width: 480px){
+          .servis-hero { height: 50vh !important; }
+          .hero-title { font-size: 24px !important; }
+          .services-heading { font-size: 24px !important; }
         }
         
         @media (max-width: 900px) {
           .web-pm-card {
             grid-template-columns: 1fr !important;
-            padding: 28px !important;
+            padding: 24px !important;
           }
           .web-pm-content {
             margin-left: 0 !important;
@@ -241,7 +255,7 @@ export default function Servis() {
             alt="Infimech logo"
             className="hero-logo-img"
             style={{
-              width: '250px', 
+              width: 'clamp(120px, 15vw, 250px)', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'
@@ -256,7 +270,7 @@ export default function Servis() {
             position: 'relative',
             zIndex: 2,
             width: '50%', 
-            paddingLeft: '10rem', 
+            paddingLeft: 'clamp(20px, 8vw, 10rem)',
             color: '#fff',
             marginTop: '7rem'
           }}
@@ -279,7 +293,7 @@ export default function Servis() {
           <h1
             className="hero-title"
             style={{
-              fontSize: '70px',
+              fontSize: 'clamp(32px, 8vw, 70px)',
               lineHeight: 0.95,
               fontWeight: 900,
               letterSpacing: '1px',
@@ -294,7 +308,7 @@ export default function Servis() {
             style={{
               marginTop: '24px',
               maxWidth: '900px',
-              fontSize: '17px',
+              fontSize: 'clamp(14px, 2vw, 17px)',
               lineHeight: 1.7,
               opacity: 0.95
             }}

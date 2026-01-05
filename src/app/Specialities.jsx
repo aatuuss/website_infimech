@@ -12,12 +12,16 @@ const Specialities = () => {
           backgroundImage: 'url("/img/specialities.jpeg")', 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: '100vh',
+          minHeight: '100vh',
+          height: 'auto',
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          paddingLeft: '8%', 
+          paddingLeft: 'max(20px, 5vw)',
+          paddingRight: '20px',
+          paddingBottom: '40px',
+          paddingTop: '80px',
           boxSizing: 'border-box',
           fontFamily: "'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
           position: 'relative',
@@ -29,8 +33,8 @@ const Specialities = () => {
           href="/"
           style={{
             position: 'absolute',
-            top: '56px',   
-            left: '5%',  
+            top: '20px',   
+            left: 'max(20px, 5vw)',  
             zIndex: 10,
             textDecoration: 'none',
             padding: 0
@@ -40,7 +44,7 @@ const Specialities = () => {
             src="/img/logo2.png"
             alt="Infimech logo"
             style={{
-              width: '250px', 
+              width: 'clamp(120px, 15vw, 250px)', 
               maxWidth: '100%',
               height: 'auto',
               display: 'block'
@@ -49,18 +53,18 @@ const Specialities = () => {
         </a>
 
         {/* CONTENT WRAPPER HERO */}
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', marginTop: '60px' }}>
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '100%', marginTop: 'clamp(40px, 6vw, 60px)' }}>
           {/* Breadcrumb */}
           <div 
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               backgroundColor: 'rgba(60, 90, 140, 0.6)', 
-              padding: '8px 20px',
+              padding: 'clamp(6px, 1vw, 8px) clamp(12px, 2vw, 20px)',
               borderRadius: '50px',
-              fontSize: '14px',
+              fontSize: 'clamp(11px, 2vw, 14px)',
               fontWeight: '600',
-              marginBottom: '20px',
+              marginBottom: 'clamp(12px, 2vw, 20px)',
               backdropFilter: 'blur(4px)',
               boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
             }}
@@ -73,10 +77,10 @@ const Specialities = () => {
           {/* Judul Hero */}
           <h1 
             style={{
-              fontSize: '64px',
+              fontSize: 'clamp(32px, 8vw, 64px)',
               fontWeight: '900',
-              marginBottom: '-30px', 
-              marginLeft: '20px', 
+              marginBottom: 'clamp(-20px, -2vw, -30px)', 
+              marginLeft: 'clamp(0px, 2vw, 20px)', 
               position: 'relative',
               zIndex: 5,
               textTransform: 'uppercase',
@@ -92,7 +96,7 @@ const Specialities = () => {
           <div 
             style={{
               backgroundColor: 'rgba(120, 145, 190, 0.4)', 
-              padding: '60px 40px 40px 40px', 
+              padding: 'clamp(30px, 5vw, 60px) clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px)', 
               borderRadius: '20px',
               backdropFilter: 'blur(10px)',
               WebkitBackdropFilter: 'blur(10px)',
@@ -103,7 +107,7 @@ const Specialities = () => {
               zIndex: 1
             }}
           >
-            <p style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '500', margin: 0, textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
+            <p style={{ fontSize: 'clamp(13px, 2vw, 16px)', lineHeight: '1.6', fontWeight: '500', margin: 0, textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
               We deliver end-to-end CFD expertise—from fluid-thermal analysis and advanced 
               industrial applications to solver optimization, OpenFOAM customization, and 
               validation—ensuring efficient, accurate, and data-driven engineering solutions.
@@ -117,7 +121,7 @@ const Specialities = () => {
       ========================================= */}
       <div 
         style={{ 
-          padding: '80px 10%', 
+          padding: 'clamp(40px, 8vw, 80px) clamp(16px, 5vw, 10%)',
           backgroundColor: '#fff', 
           fontFamily: "'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
           color: '#000',

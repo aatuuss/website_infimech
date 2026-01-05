@@ -226,10 +226,10 @@ export default function Home() {
   };
 
   const arcPath = (cx, cy, r, start, end) => {
-    const s = polar(cx, cy, r, end);
-    const e = polar(cx, cy, r, start);
+    const s = polar(cx, cy, r, start);
+    const e = polar(cx, cy, r, end);
     const large = end - start <= 180 ? 0 : 1;
-    return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 0 ${e.x} ${e.y}`;
+    return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`;
   };
 
   const title = services[serviceIdx].title.toUpperCase();
@@ -242,7 +242,7 @@ export default function Home() {
   return (
     <section className="bg-[#FFFFFF]">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative min-h-screen md:h-screen w-full overflow-hidden">
         <img
           src="/img/about.jpg"
           alt="Hero Background"
@@ -251,12 +251,12 @@ export default function Home() {
 
         <div className="pointer-events-none absolute inset-0 z-0">
           <div
-            className="absolute inset-y-0 left-0 w-[80%] backdrop-blur-md backdrop-saturate-110 bg-black/5"
+            className="absolute inset-y-0 left-0 w-full md:w-[80%] backdrop-blur-md backdrop-saturate-110 bg-black/5"
             style={{
               clipPath: `
                 polygon(
                   0% 0%,
-                  80% 0%,
+                  100% 0%,
                   55% 0%,
                   35% 50%,
                   50% 90%,
@@ -268,22 +268,22 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 flex h-full max-w-3xl flex-col px-10 md:px-20 text-white">
-          <div className="pt-16">
+        <div className="relative z-10 flex h-full max-w-3xl flex-col px-4 sm:px-10 md:px-20 text-white py-8 md:py-0">
+          <div className="pt-8 md:pt-16">
             <img
               src="/img/logo2.png"
               alt="Infimech Logo"
-              className="mb-14 w-56 md:w-64"
+              className="mb-8 md:mb-14 w-40 sm:w-48 md:w-56 lg:w-64"
             />
           </div>
 
-          <div className="flex flex-1 flex-col justify-center -mt-40">
-            <h1 className="mb-10 text-3xl font-semibold leading-tight md:text-4xl">
+          <div className="flex flex-1 flex-col justify-center md:-mt-40">
+            <h1 className="mb-6 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
               To Engineering Solutions <br />
               with Digital Transformation
             </h1>
 
-            <button className="group w-fit rounded-full bg-white px-10 py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50">
+            <button className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
               <span className="flex items-center gap-2">
                 Contact
                 <svg
@@ -324,54 +324,54 @@ export default function Home() {
         />
 
         {/* ================= ABOUT COMPANY ================= */}
-        <section className="relative z-10 py-10 lg:py-10">
-          <div className="mx-auto max-w-7xl grid grid-cols-1 gap-16 px-8 lg:grid-cols-2 items-center">
-            <div className="grid grid-cols-2 gap-6">
+        <section className="relative z-10 py-10 lg:py-10 px-4 sm:px-6">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <img
                 src="/img/meeting.jpg"
-                className="h-48 w-full rounded-xl object-cover"
+                className="h-32 sm:h-40 md:h-48 w-full rounded-xl object-cover"
               />
               <img
                 src="/img/meeting1.jpg"
-                className="h-48 w-full rounded-xl object-cover"
+                className="h-32 sm:h-40 md:h-48 w-full rounded-xl object-cover"
               />
               <img
                 src="/img/meeting2.jpg"
-                className="col-span-2 h-60 w-full rounded-xl object-cover"
+                className="col-span-2 h-40 sm:h-56 md:h-60 w-full rounded-xl object-cover"
               />
             </div>
 
-            <div>
-              <h2 className="mb-6 text-6xl font-semibold text-[#3B6C8D]">
+            <div className="px-2 sm:px-0">
+              <h2 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#3B6C8D]">
                 ABOUT COMPANY
               </h2>
 
-              <p className="mb-4 text-black leading-relaxed">
+              <p className="mb-3 sm:mb-4 text-sm sm:text-base text-black leading-relaxed">
                 PT Infimech Harmoni Teknologi is an Indonesian startup providing
                 engineering consultancy, simulation, and training services.
               </p>
 
-              <p className="mb-10 text-black leading-relaxed">
+              <p className="mb-6 sm:mb-10 text-sm sm:text-base text-black leading-relaxed">
                 We help industries optimize design, improve performance, and
                 solve complex engineering problems using digital tools.
               </p>
 
-              <div className="mb-10 grid grid-cols-3 gap-8">
+              <div className="mb-8 sm:mb-10 grid grid-cols-3 gap-4 sm:gap-8">
                 <div>
-                  <p className="text-sm text-[#3B6C8D]">Project Done</p>
-                  <p className="text-5xl font-semibold text-[#3B6C8D]">100+</p>
+                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Project Done</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">100+</p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#3B6C8D]">Clients</p>
-                  <p className="text-5xl font-semibold text-[#3B6C8D]">20+</p>
+                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Clients</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">20+</p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#3B6C8D]">Partners</p>
-                  <p className="text-5xl font-semibold text-[#3B6C8D]">10+</p>
+                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Partners</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">10+</p>
                 </div>
               </div>
 
-              <button className="group inline-flex items-center gap-2 rounded-full bg-[#3B6C8D] px-9 py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#345F7C]">
+              <button className="group inline-flex items-center gap-2 rounded-full bg-[#3B6C8D] px-6 sm:px-9 py-2.5 sm:py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#345F7C] text-sm sm:text-base">
                 What We Do
                 <svg
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -392,26 +392,26 @@ export default function Home() {
         </section>
 
         {/* ================= OUR VALUE ================= */}
-        <section className="relative z-10 py-8 lg:py-10">
-          <div className="mx-auto max-w-7xl grid grid-cols-1 gap-y-16 gap-x-12 px-8 lg:grid-cols-2 lg:px-16 lg:-translate-x-14 items-start">
+        <section className="relative z-10 py-8 lg:py-10 px-4 sm:px-6">
+          <div className="mx-auto max-w-6xl grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-2 lg:-translate-x-15">
             {/* TITLE (FULL WIDTH) */}
             <div className="lg:col-span-2">
-              <h2 className="mb-2 text-center text-6xl font-semibold text-[#3B6C8D]">
+              <h2 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-[#3B6C8D]">
                 OUR VALUE
               </h2>
             </div>
 
             {/* ===== VISION CARD ===== */}
-            <div className="flex h-full flex-col max-w-lg mx-auto">
+            <div className="flex h-full flex-col">
               <img
                 src="/img/meeting4.jpg"
                 alt="Our Vision"
-                className="mb-6 h-[240px] w-full rounded-2xl object-cover shadow-md"
+                className="mb-4 sm:mb-6 h-32 sm:h-48 w-full rounded-2xl object-cover shadow-md"
               />
-              <h3 className="mb-4 text-3xl font-semibold text-[#3B6C8D]">
+              <h3 className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl font-semibold text-[#3B6C8D]">
                 Our Vision
               </h3>
-              <p className="text-base leading-relaxed text-gray-600">
+              <p className="text-sm sm:text-base leading-relaxed text-gray-600">
                 As an Indonesian engineering company with a global presence and
                 advanced engineering services, committed to becoming a
                 world-class company.
@@ -419,16 +419,16 @@ export default function Home() {
             </div>
 
             {/* ===== MISSION CARD ===== */}
-            <div className="flex h-full flex-col max-w-lg mx-auto">
+            <div className="flex h-full flex-col">
               <img
                 src="/img/meeting3.jpg"
                 alt="Our Mission"
-                className="mb-6 h-[240px] w-full rounded-2xl object-cover shadow-md"
+                className="mb-4 sm:mb-6 h-32 sm:h-48 w-full rounded-2xl object-cover shadow-md"
               />
-              <h3 className="mb-4 text-3xl font-semibold text-[#3B6C8D]">
+              <h3 className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl font-semibold text-[#3B6C8D]">
                 Our Mission
               </h3>
-              <p className="text-base leading-relaxed text-gray-600">
+              <p className="text-sm sm:text-base leading-relaxed text-gray-600">
                 We are dedicated to delivering world-class, value-driven
                 engineering services tailored to the evolving needs of clients
                 in construction, oil and gas, power generation, and
@@ -443,30 +443,15 @@ export default function Home() {
       </section>
 
       {/* ================= OUR SERVICES ================= */}
-      <section className="relative bg-white py-1">
-        <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
+      <section className="relative bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D] mb-12 sm:mb-16 lg:mb-20">
           OUR SERVICES
         </h2>
 
-        <div
-          className="
-    max-w-7xl
-    mx-auto
-    px-16
-    lg:pl-24
-    lg:pr-32
-    grid
-    grid-cols-1
-    lg:grid-cols-2
-    gap-24
-    items-center
-    -mt-12
-    lg:-mt-10
-  "
-        >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
           {/* DONUT */}
-          <div className="flex justify-center">
-            <div className="relative w-80 h-80">
+          <div className="flex justify-center order-1 lg:order-1">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <div
                 className="absolute inset-0 rounded-full"
                 style={{
@@ -510,22 +495,26 @@ export default function Home() {
                   />
                 </defs>
 
-                <text fill="white" fontSize="17" fontWeight="600">
+                <text fill="white" fontSize="16" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
                   <textPath
                     href="#arcOuter"
                     startOffset="50%"
                     textAnchor="middle"
+                    side="left"
+                    dominantBaseline="text-after-edge"
                   >
                     {line1}
                   </textPath>
                 </text>
 
                 {line2 && (
-                  <text fill="white" fontSize="20" fontWeight="600">
+                  <text fill="white" fontSize="15" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
                     <textPath
                       href="#arcInner"
                       startOffset="50%"
                       textAnchor="middle"
+                      side="left"
+                      dominantBaseline="text-after-edge"
                     >
                       {line2}
                     </textPath>
@@ -534,174 +523,149 @@ export default function Home() {
               </svg>
 
               <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="w-40 h-40 bg-white rounded-full" />
+                <div className="w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 bg-white rounded-full shadow-inner" />
               </div>
             </div>
           </div>
 
           {/* CARD + ARROWS */}
-<div className="flex flex-col items-start gap-10">
-  <div
-    className="
-      bg-[#EBE9FF]
-      shadow-lg
-      rounded-[32px]
-      p-10
-      max-w-md
-      w-full
-      h-[420px]
-      flex
-      flex-col
-    "
-  >
-    <h3 className="text-xl font-semibold mb-4 text-[#3B6C8D] shrink-0">
-      {services[serviceIdx].title}
-    </h3>
+          <div className="flex flex-col gap-5 order-2 lg:order-2 w-full max-w-lg lg:max-w-md mx-auto">
+            <div
+              className="bg-[#EBE9FF] shadow-xl rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 lg:p-10 w-full min-h-[360px] sm:min-h-[400px] lg:min-h-[440px] flex flex-col order-1"
+            >
+              <h3 className="text-xl sm:text-2xl font-bold mb-5 text-[#3B6C8D] shrink-0 border-b-2 border-[#3B6C8D] pb-3">
+                {services[serviceIdx].title}
+              </h3>
 
-    <ul
-      className="
-        list-disc
-        pl-5
-        space-y-2
-        text-gray-700
-        overflow-y-auto
-        pr-2
-        flex-1
-      "
-    >
-      {services[serviceIdx].items.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  </div>
+              <ul
+                className="list-disc pl-6 space-y-3 text-sm sm:text-base text-gray-700 overflow-y-auto pr-2 flex-1"
+              >
+                {services[serviceIdx].items.map((item, i) => (
+                  <li key={i} className="leading-relaxed">{item}</li>
+                ))}
+              </ul>
+            </div>
 
-  <div className="flex gap-6">
-    <button
-      onClick={() =>
-        setServiceIdx((p) => (p === 0 ? services.length - 1 : p - 1))
-      }
-      className="w-12 h-12 rounded-full border hover:bg-gray-100"
-    >
-      ←
-    </button>
+            <div className="flex justify-center lg:justify-start gap-5 sm:gap-6 order-2">
+              <button
+                onClick={() =>
+                  setServiceIdx((p) => (p === 0 ? services.length - 1 : p - 1))
+                }
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-[#3B6C8D] text-[#3B6C8D] hover:bg-[#3B6C8D] hover:text-white flex items-center justify-center text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                ←
+              </button>
 
-    <button
-      onClick={() => setServiceIdx((p) => (p + 1) % services.length)}
-      className="w-12 h-12 rounded-full border hover:bg-gray-100"
-    >
-      →
-    </button>
-  </div>
-</div>
+              <button
+                onClick={() => setServiceIdx((p) => (p + 1) % services.length)}
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-[#3B6C8D] text-[#3B6C8D] hover:bg-[#3B6C8D] hover:text-white flex items-center justify-center text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                →
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       
       {/* ================= INDUSTRY CATEGORY ================= */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden px-4 sm:px-6">
         {/* LOGO BACKGROUND */}
         <img
           src="/img/Logo1.png"
           alt="Logo Background"
-          className="
-      absolute
-      -right-56
-      top-1/2
-      w-[700px]
-      -translate-y-1/2
-      opacity-19
-      pointer-events-none
-      z-0
-    "
+          className="absolute -right-32 sm:-right-48 lg:-right-56 top-1/2 w-[400px] sm:w-[500px] lg:w-[700px] -translate-y-1/2 opacity-19 pointer-events-none z-0"
         />
         
-        <div className="mx-auto max-w-7xl px-8 text-center relative z-10">
+        <div className="mx-auto max-w-7xl text-center relative z-10">
 
           {/* ===== TITLE ===== */}
-          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D] mb-12 sm:mb-16 lg:mb-20">
             INDUSTRY CATEGORY
           </h2>
 
           {/* ===== SLIDER ===== */}
-          <div className="relative flex items-center justify-center">
-            {/* LEFT SIDE - 3 SLIDES */}
-            <div className="flex items-center mr-[-40px]">
-              {[...Array(3)].map((_, offset) => {
-                const index =
-                  (industryIdx - 3 + offset + SLIDES.length) % SLIDES.length;
-                const slide = SLIDES[index];
-                const sizes = ["w-32 h-32", "w-40 h-40", "w-56 h-56"];
+          <div className="relative flex items-center justify-center overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 pb-4">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 lg:gap-0 min-w-max lg:min-w-0">
+              {/* LEFT SIDE - 3 SLIDES (HIDDEN ON MOBILE) */}
+              <div className="hidden lg:flex items-center mr-[-40px]">
+                {[...Array(3)].map((_, offset) => {
+                  const index =
+                    (industryIdx - 3 + offset + SLIDES.length) % SLIDES.length;
+                  const slide = SLIDES[index];
+                  const sizes = ["w-32 h-32", "w-40 h-40", "w-56 h-56"];
 
-                return (
-                  <div
-                    key={`left-${offset}`}
-                    className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} -mr-6 transition-all hover:opacity-80`}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* CENTER - ACTIVE SLIDE */}
-            <div className="relative z-50 w-72 h-72 flex-shrink-0 overflow-hidden rounded-[32px]">
-              <img
-                src={SLIDES[industryIdx].image}
-                alt={SLIDES[industryIdx].title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-center px-6 pb-4 pt-10 bg-gradient-to-t from-[#274C77]/80 via-[#274C77]/60 to-transparent">
-                <h3 className="text-lg font-semibold leading-snug text-white text-center">
-                  {SLIDES[industryIdx].title}
-                </h3>
+                  return (
+                    <div
+                      key={`left-${offset}`}
+                      className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} -mr-6 transition-all hover:opacity-80 flex-shrink-0`}
+                    >
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })}
               </div>
-            </div>
 
-            {/* RIGHT SIDE - 3 SLIDES */}
-            <div className="flex items-center ml-[-40px]">
-              {[...Array(3)].map((_, offset) => {
-                const index = (industryIdx + 1 + offset) % SLIDES.length;
-                const slide = SLIDES[index];
-                const sizes = ["w-56 h-56", "w-40 h-40", "w-32 h-32"];
-                const zOrder = ["z-30", "z-20", "z-10"];
+              {/* CENTER - ACTIVE SLIDE */}
+              <div className="relative z-50 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 flex-shrink-0 overflow-hidden rounded-[20px] sm:rounded-[32px]">
+                <img
+                  src={SLIDES[industryIdx].image}
+                  alt={SLIDES[industryIdx].title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-center px-4 sm:px-6 pb-3 sm:pb-4 pt-8 bg-gradient-to-t from-[#274C77]/80 via-[#274C77]/60 to-transparent">
+                  <h3 className="text-sm sm:text-lg font-semibold leading-snug text-white text-center">
+                    {SLIDES[industryIdx].title}
+                  </h3>
+                </div>
+              </div>
 
-                return (
-                  <div
-                    key={`right-${offset}`}
-                    className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} ${zOrder[offset]} -ml-6 transition-all hover:opacity-80`}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                );
-              })}
+              {/* RIGHT SIDE - 3 SLIDES (HIDDEN ON MOBILE) */}
+              <div className="hidden lg:flex items-center ml-[-40px]">
+                {[...Array(3)].map((_, offset) => {
+                  const index = (industryIdx + 1 + offset) % SLIDES.length;
+                  const slide = SLIDES[index];
+                  const sizes = ["w-56 h-56", "w-40 h-40", "w-32 h-32"];
+                  const zOrder = ["z-30", "z-20", "z-10"];
+
+                  return (
+                    <div
+                      key={`right-${offset}`}
+                      className={`relative rounded-[20px] overflow-hidden ${sizes[offset]} ${zOrder[offset]} -ml-6 transition-all hover:opacity-80 flex-shrink-0`}
+                    >
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* ===== NAVIGATION ===== */}
-          <div className="mt-10 flex items-center justify-center gap-6">
-            <button onClick={prevIndustry} className="text-3xl">
+          <div className="mt-8 sm:mt-10 lg:mt-10 flex items-center justify-center gap-4 sm:gap-6">
+            <button onClick={prevIndustry} className="text-2xl sm:text-3xl lg:text-3xl hover:opacity-70 transition">
               ‹
             </button>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 sm:gap-2">
               {SLIDES.map((_, i) => (
                 <span
                   key={i}
-                  className={`h-2 w-2 rounded-full ${
+                  className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-all ${
                     i === industryIdx ? "bg-[#274C77]" : "bg-gray-300"
                   }`}
                 />
               ))}
             </div>
 
-            <button onClick={nextIndustry} className="text-3xl">
+            <button onClick={nextIndustry} className="text-2xl sm:text-3xl lg:text-3xl hover:opacity-70 transition">
               ›
             </button>
           </div>
@@ -709,83 +673,62 @@ export default function Home() {
       </section>
 
       {/* ================= CLIENT LOGOS ================= */}
-      <section className="bg-white py-1">
-      <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-white py-8 sm:py-12 lg:py-14 px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl">
 
-        {/* HEADER */}
-        <div className="text-center mb-10">
-          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-5">
-            OUR CLIENTS
-          </h2>
+          {/* HEADER */}
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D] mb-4 sm:mb-5">
+              OUR CLIENTS
+            </h2>
 
-          <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-sm md:text-base">
-            Trusted by a diverse range of energy, petrochemical, and power sector
-            partners for precision-engineered metering and process solutions.
-          </p>
+            <p className="mt-3 sm:mt-4 max-w-3xl mx-auto text-gray-600 text-xs sm:text-sm md:text-base px-2">
+              Trusted by a diverse range of energy, petrochemical, and power sector
+              partners for precision-engineered metering and process solutions.
+            </p>
+          </div>
+
+          {/* LOGO GRID */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
+            {CLIENT_LOGOS.map((logo) => (
+              <a
+                key={logo.id}
+                href={logo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full h-16 sm:h-20 lg:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition duration-300 cursor-pointer p-2"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </a>
+            ))}
+          </div>
+
         </div>
-
-        {/* LOGO GRID */}
-        <div className="
-          grid
-          grid-cols-2
-          sm:grid-cols-3
-          md:grid-cols-4
-          lg:grid-cols-6
-          gap-x-1
-          gap-y-10
-          items-center
-          justify-items-center
-        ">
-          {CLIENT_LOGOS.map((logo) => (
-            <a
-              key={logo.id}
-              href={logo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                w-[120px]
-                h-[80px]
-                flex
-                items-center
-                justify-center
-                grayscale
-                hover:grayscale-0
-                transition
-                duration-300
-                cursor-pointer
-              "
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full max-w-full object-contain"
-              />
-            </a>
-          ))}
-        </div>
-
-      </div>
-    </section>
+      </section>
 
       {/* ================= KEY EXPERIENCES ================= */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-8">
+      <section className="bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl">
 
           {/* ===== TITLE ===== */}
-          <h2 className="text-center text-5xl font-semibold text-[#3B6C8D] mb-20">
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D] mb-10 sm:mb-14 lg:mb-20">
             KEY EXPERIENCES
           </h2>
 
 
           {/* CARD SLIDER */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10">
             {SLIDES1[expIdx % SLIDES1.length].map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-[24px] overflow-hidden shadow-sm flex flex-col"
+                className="bg-white rounded-[16px] sm:rounded-[24px] overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow"
               >
                 {/* IMAGE */}
-                <div className="h-[200px] overflow-hidden">
+                <div className="h-32 sm:h-40 md:h-48 lg:h-[200px] overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -794,17 +737,17 @@ export default function Home() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="flex flex-col p-6 flex-1">
-                  <h3 className="text-[#274C77] text-lg font-medium leading-snug pb-4">
+                <div className="flex flex-col p-4 sm:p-5 lg:p-6 flex-1">
+                  <h3 className="text-[#274C77] text-sm sm:text-base lg:text-lg font-medium leading-snug pb-3 sm:pb-4">
                     {item.title}
                   </h3>
 
                   <div className="border-b border-gray-300 mb-auto"></div>
 
-                  <div className="pt-4">
+                  <div className="pt-3 sm:pt-4">
                     <Link
                       to="/experiences"
-                      className="text-sm text-[#274C77] font-medium hover:underline"
+                      className="text-xs sm:text-sm text-[#274C77] font-medium hover:underline"
                     >
                       Explore More →
                     </Link>
@@ -815,15 +758,15 @@ export default function Home() {
           </div>
 
           {/* NAVIGATION */}
-          <div className="mt-10 flex items-center gap-6">
+          <div className="flex items-center justify-center gap-4 sm:gap-6">
             <button
               onClick={prevExp}
-              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition text-sm"
             >
               ←
             </button>
 
-            <div className="relative w-24 h-[2px] bg-gray-300 overflow-hidden">
+            <div className="relative w-16 sm:w-24 h-[2px] bg-gray-300 overflow-hidden">
               <div
                 className="absolute top-0 left-0 h-full bg-black transition-all duration-300"
                 style={{
@@ -834,7 +777,7 @@ export default function Home() {
 
             <button
               onClick={nextExp}
-              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200 transition text-sm"
             >
               →
             </button>

@@ -60,12 +60,12 @@ const ExperiencesPage = () => {
       />
 
       <header className="px-6 py-8 md:px-12 lg:px-20 flex flex-col gap-3 items-start relative z-10">
-        <img src="/img/logo2.png" alt="Infimech" className="h-10 md:h-12" />
+        <img src="/img/logo4.png" alt="Infimech" className="h-10 md:h-12" />
 
         <nav className="flex items-center gap-2 text-sm text-gray-600">
-          <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-600">
+          <Link to="/Home" className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
             Home
-          </span>
+          </Link>
           <span className="text-gray-400">›</span>
           <span className="px-3 py-1 rounded-full bg-gray-200 text-gray-700">
             Key Experiences
@@ -86,7 +86,7 @@ const ExperiencesPage = () => {
         </div>
 
         <section className="grid gap-10 lg:grid-cols-[1fr_1.05fr] items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 order-2 lg:order-1">
             <div className="inline-flex items-start">
               <h2 className="text-xl md:text-2xl font-semibold text-[#3B6C8D] max-w-md leading-snug">
                 {slide.title}
@@ -102,7 +102,7 @@ const ExperiencesPage = () => {
             </Link>
           </div>
 
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <div className="overflow-hidden rounded-3xl shadow-2xl border border-gray-100">
               <img
                 src={slide.image}

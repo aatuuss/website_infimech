@@ -167,19 +167,19 @@ const DetailExperiencesPage = () => {
         className="absolute -left-56 top-1/2 w-[700px] -translate-y-1/2 opacity-20 pointer-events-none z-0"
       />
 
-      <header className="px-6 py-8 md:px-12 lg:px-20 flex flex-col gap-3 items-start relative z-10">
-        <img src="/img/logo2.png" alt="Infimech" className="h-10 md:h-12" />
+      <header className="px-4 sm:px-6 py-6 sm:py-8 md:px-12 lg:px-20 flex flex-col gap-3 items-start relative z-10">
+        <img src="/img/logo4.png" alt="Infimech" className="h-8 sm:h-10 md:h-12" />
 
-        <nav className="flex items-center gap-2 text-sm text-gray-600">
-          <Link to="/Home" className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
+        <nav className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-600">
+          <Link to="/Home" className="px-2 sm:px-3 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
             Home
           </Link>
           <span className="text-gray-400">›</span>
-          <Link to="/experiences" className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
+          <Link to="/experiences" className="px-2 sm:px-3 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
             Key Experiences
           </Link>
           <span className="text-gray-400">›</span>
-          <span className="px-3 py-1 rounded-full bg-gray-200 text-gray-700">
+          <span className="px-2 sm:px-3 py-1 rounded-full bg-gray-200 text-gray-700">
             Detail Key Experiences
           </span>
         </nav>
