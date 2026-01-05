@@ -217,7 +217,6 @@ export default function Servis() {
           {/* 2. WEB BASED PM CARD */}
           <div style={{ marginTop: '50px', position: 'relative', zIndex: 2 }}>
             <div className="web-pm-card" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px', alignItems: 'center', background: '#fff', borderRadius: '22px', boxShadow: '0 15px 40px rgba(0,0,0,0.1)', padding: '25px 35px' }}>
-              <img src="/img/erp.jpeg" alt="Web PM" style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '14px' }} />
               <div className="web-pm-content" style={{ marginLeft: '-40px' }}>
                 <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '12px', color: '#111' }}>Web Based<br />Project Management Services</h3>
                 <ul style={{ paddingLeft: '20px', fontSize: '14px', lineHeight: 1.6, color: '#333', listStyleType: 'disc', margin: 0 }}>
