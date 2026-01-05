@@ -94,7 +94,7 @@ const ExperiencesPage = () => {
             </div>
 
             <Link
-              to={`/detailexperiences/${slide.id}`}
+              to={`/detailexperiencesPage/${slide.id}`}
               className="inline-flex items-center gap-2 rounded-full bg-[#2D63E6] px-6 py-3 text-white font-semibold shadow-md hover:-translate-y-0.5 transition-transform"
             >
               Explore More

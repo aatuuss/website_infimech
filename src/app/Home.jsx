@@ -746,7 +746,7 @@ export default function Home() {
 
                   <div className="pt-3 sm:pt-4">
                     <Link
-                      to="/experiences"
+                      to="/experiencesPage"
                       className="text-xs sm:text-sm text-[#274C77] font-medium hover:underline"
                     >
                       Explore More →

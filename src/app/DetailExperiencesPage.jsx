@@ -223,7 +223,7 @@ const DetailExperiencesPage = () => {
           {/* NAVIGATION */}
           <div className="mt-16 flex items-center justify-center gap-6">
             <Link
-              to="/experiences"
+              to="/experiencesPage"
               className="inline-flex items-center gap-2 rounded-full bg-[#3B6C8D] px-6 py-3 text-white font-semibold shadow-md hover:-translate-y-0.5 transition-transform"
             >
               ← Back to Experiences

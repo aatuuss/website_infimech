@@ -26,9 +26,9 @@ export default function App() {
             <Route path="/servis" element={<Servis />} />
             <Route path="/specialities" element={<Specialities />} />
             <Route path="/experince" element={<Experince />} />
-            <Route path="/experiences" element={<ExperiencesPage />} />
+            <Route path="/experiencesPage" element={<ExperiencesPage />} />
             <Route
-              path="/detailexperiences"
+              path="/detailexperiencesPage/:id"
               element={<DetailExperiencesPage />}
             />
           </Routes>
