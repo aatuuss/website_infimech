@@ -216,11 +216,14 @@ export default function Servis() {
 
           {/* 2. WEB BASED PM CARD */}
           <div style={{ marginTop: '50px', position: 'relative', zIndex: 2 }}>
-            <div className="web-pm-card" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px', alignItems: 'center', background: '#fff', borderRadius: '22px', boxShadow: '0 15px 40px rgba(0,0,0,0.1)', padding: '25px 35px' }}>
-              <div className="web-pm-content" style={{ marginLeft: '-40px' }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '12px', color: '#111' }}>Web Based<br />Project Management Services</h3>
-                <ul style={{ paddingLeft: '20px', fontSize: '14px', lineHeight: 1.6, color: '#333', listStyleType: 'disc', margin: 0 }}>
-                  {['Implement ERP', 'Implement EDMS', 'Implement E-Library', 'Custom App', 'AI Based Tech', 'Project Controller', 'PM Services'].map((item, idx) => <li key={idx}>{item}</li>)}
+            <div className="web-pm-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '40px', alignItems: 'center', background: '#fff', borderRadius: '22px', boxShadow: '0 15px 40px rgba(0,0,0,0.1)', padding: '30px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/img/erp.jpeg" alt="ERP Web Based" style={{ width: '100%', height: 'auto', maxWidth: '400px', objectFit: 'contain' }} />
+              </div>
+              <div className="web-pm-content">
+                <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '18px', color: '#111', lineHeight: 1.3 }}>Web Based<br />Project Management Services</h3>
+                <ul style={{ paddingLeft: '20px', fontSize: '14px', lineHeight: 1.8, color: '#333', listStyleType: 'disc', margin: 0 }}>
+                  {['Implement ERP in Project Management', 'Implement EDMS in Project Management', 'Implement E-Library', 'Custom Engineering Application', 'Implement AI Based Technology', 'Project Controller Service', 'Document Controller Service', 'Project Management Services'].map((item, idx) => <li key={idx}>{item}</li>)}
                 </ul>
               </div>
             </div>
