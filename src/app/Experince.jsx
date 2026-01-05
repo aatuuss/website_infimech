@@ -250,7 +250,7 @@ const Experience = () => {
         {/* LOGO AREA */}
         <a href="/" style={{ position: 'absolute', top: '20px', left: '5%', zIndex: 10 }}>
           <img
-            src="/img/logo-baru-removebg.png"
+            src="/img/logo2.png"
             alt="Infimech logo"
             style={{ width: isMobile ? '150px' : '240px', height: 'auto' }}
           />
@@ -401,4 +401,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Experince;
