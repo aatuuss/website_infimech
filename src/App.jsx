@@ -3,13 +3,17 @@ import './App.css';
 
 import Servis from './app/Servis';
 import Specialities from './app/Specialities';
-import Experince from "./app/Experince";
+import Experience from "./app/Experince";
 
 function App() {
-  return(
-    <div>
-      
-    </div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/servis" element={<Servis />} />
+        <Route path="/specialities" element={<Specialities />} />
+        <Route path="/experience" element={<Experience />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
