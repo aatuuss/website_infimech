@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Experience = () => {
+const Experince = () => {
   const bgImage = "/img/hero2.jpg";
   const [selectedKey, setSelectedKey] = useState('2019');
   const [showSub2021, setShowSub2021] = useState(false);
@@ -14,7 +14,7 @@ const Experience = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const experienceData = {
+  const experinceData = {
     '2019': {
       title: "OUR 2019 EXPERIENCES",
       image: "/img/p1.png",
@@ -211,7 +211,7 @@ const Experience = () => {
     }
   };
 
-  const currentContent = experienceData[selectedKey] || experienceData['2019'];
+  const currentContent = experinceData[selectedKey] || experinceData['2019'];
 
   return (
     // Penambahan margin: 0 dan padding: 0 pada container terluar
