@@ -279,7 +279,7 @@ export default function Home() {
 
           <div className="flex flex-1 flex-col justify-center md:-mt-40">
             <h1 className="mb-6 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-              To Engineering Solutions <br />
+              Engineering Solutions <br />
               with Digital Transformation
             </h1>
 
@@ -359,11 +359,11 @@ export default function Home() {
               <div className="mb-8 sm:mb-10 grid grid-cols-3 gap-4 sm:gap-8">
                 <div>
                   <p className="text-xs sm:text-sm text-[#3B6C8D]">Project Done</p>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">100+</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">150+</p>
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-[#3B6C8D]">Clients</p>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">20+</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">50+</p>
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-[#3B6C8D]">Partners</p>

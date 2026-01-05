@@ -401,4 +401,4 @@ const Experience = () => {
   );
 };
 
-export default Experince;
+export default Experience;
