@@ -1,25 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
+import Servis from './app/Servis';
+import Specialities from './app/Specialities';
+import Experience from "./app/Experince";
 
-import Home from "./app/Home";
-import Contact from "./app/Contact";
-import Servis from "./app/Servis";
-import Specialities from "./app/Specialities";
-import Experince from "./app/Experince";
-import ExperiencesPage from "./app/experiences/page";
-import DetailExperiencesPage from "./app/detailexperiences/page";
-
-function ScrollToTop() {
-  const location = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-  
-  return null;
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/servis" element={<Servis />} />
+        <Route path="/specialities" element={<Specialities />} />
+        <Route path="/experience" element={<Experience />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default function App() {
