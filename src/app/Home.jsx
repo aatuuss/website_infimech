@@ -211,8 +211,10 @@ export default function Home() {
 
   const angle = 360 / services.length;
 
-  const outerRadius = 120;
-  const innerRadius = 102;
+  const outerRadius = 128;
+  const innerRadius = 96;
+
+  const middleRadius = Math.round((outerRadius + innerRadius) / 2);
 
   const startAngle = serviceIdx * angle;
   const endAngle = startAngle + angle;
@@ -232,12 +234,19 @@ export default function Home() {
     return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`;
   };
 
-  const title = services[serviceIdx].title.toUpperCase();
-  const splitIndex =
-    title.length > 22 ? Math.ceil(title.length / 2) : title.length;
+  const title = services[serviceIdx].title.toUpperCase().trim();
+  const words = title.split(/\s+/);
+  let line1 = "", line2 = "", line3 = "";
 
-  const line1 = title.slice(0, splitIndex);
-  const line2 = title.slice(splitIndex);
+  if (words.length <= 3) {
+    line1 = words[0] || "";
+    line2 = words[1] || "";
+    line3 = words[2] || "";
+  } else {
+    line1 = words[0];
+    line3 = words[words.length - 1];
+    line2 = words.slice(1, words.length - 1).join(" ");
+  }
 
   return (
     <section className="bg-[#FFFFFF]">
@@ -285,7 +294,7 @@ export default function Home() {
 
             <button className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
               <span className="flex items-center gap-2">
-                Contact
+                Contact Us
                 <svg
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -490,12 +499,16 @@ export default function Home() {
                     d={arcPath(160, 160, outerRadius, startAngle, endAngle)}
                   />
                   <path
+                    id="arcMiddle"
+                    d={arcPath(160, 160, middleRadius, startAngle, endAngle)}
+                  />
+                  <path
                     id="arcInner"
                     d={arcPath(160, 160, innerRadius, startAngle, endAngle)}
                   />
                 </defs>
 
-                <text fill="white" fontSize="16" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
+                <text fill="white" fontSize="18" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
                   <textPath
                     href="#arcOuter"
                     startOffset="50%"
@@ -508,7 +521,21 @@ export default function Home() {
                 </text>
 
                 {line2 && (
-                  <text fill="white" fontSize="15" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
+                  <text fill="white" fontSize="16" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
+                    <textPath
+                      href="#arcMiddle"
+                      startOffset="50%"
+                      textAnchor="middle"
+                      side="left"
+                      dominantBaseline="text-after-edge"
+                    >
+                      {line2}
+                    </textPath>
+                  </text>
+                )}
+
+                {line3 && (
+                  <text fill="white" fontSize="15" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
                     <textPath
                       href="#arcInner"
                       startOffset="50%"
@@ -516,7 +543,7 @@ export default function Home() {
                       side="left"
                       dominantBaseline="text-after-edge"
                     >
-                      {line2}
+                      {line3}
                     </textPath>
                   </text>
                 )}

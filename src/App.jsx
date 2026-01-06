@@ -8,6 +8,7 @@ import Experince from "./app/Experince";
 
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import ExperiencesPage from "./app/ExperiencesPage";
 import DetailExperiencesPage from "./app/DetailExperiencesPage";
@@ -15,6 +16,7 @@ import DetailExperiencesPage from "./app/DetailExperiencesPage";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen relative bg-slate-50">
         <Sidebar />
 

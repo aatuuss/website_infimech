@@ -9,11 +9,15 @@ export default function Sidebar() {
       {/* ================= MOBILE TOP NAVBAR ================= */}
       <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow">
         <div className="flex items-center justify-between px-6 py-4">
-          <img
-            src="/img/Logo1.png"
-            alt="Infimech"
-            className="h-8 object-contain"
-          />
+          <a href="https://wa.me/6281333546332">
+  <img
+    src="/img/Logo1.png"
+    alt="Infimech"
+    className="h-8 object-contain cursor-pointer"
+  />
+</a>
+
+
 
           <HamburgerButton open={open} onClick={() => setOpen(!open)} />
         </div>
@@ -21,10 +25,10 @@ export default function Sidebar() {
         {open && (
           <nav className="bg-white border-t">
             <MobileMenu to="/Home" label="Home" />
+            <MobileMenu to="/Contact" label="Contact Us" />
             <MobileMenu to="/Servis" label="Our Services" />
             <MobileMenu to="/Specialities" label="Our Specialities" />
             <MobileMenu to="/Experince" label="Our Experiences" />
-            <MobileMenu to="/Contact" label="Contact" />
           </nav>
         )}
       </header>
@@ -49,7 +53,7 @@ export default function Sidebar() {
 
               <nav className="flex flex-col gap-3">
                 <DesktopMenu to="/Home" label="Home" />
-                <DesktopMenu to="/Contact" label="Contact" />
+                <DesktopMenu to="/Contact" label="Contact Us" />
                 <DesktopMenu to="/Servis" label="Our Services" />
                 <DesktopMenu to="/Specialities" label="Our Specialities" />
                 <DesktopMenu to="/Experince" label="Our Experiences" />
@@ -61,12 +65,14 @@ export default function Sidebar() {
 
           <div className="w-20 flex flex-col items-center justify-between py-8">
             <HamburgerButton open={open} onClick={() => setOpen(!open)} />
+<a href="https://wa.me/6281333546332" className="cursor-pointer">
+  <img
+    src="/img/Logo1.png"
+    alt="Logo"
+    className="w-14 h-12 object-contain"
+  />
+</a>
 
-            <img
-              src="/img/Logo1.png"
-              alt="Logo"
-              className="w-14 h-12 object-contain"
-            />
           </div>
         </div>
       </div>
