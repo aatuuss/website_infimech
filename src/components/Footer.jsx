@@ -87,22 +87,23 @@ export default function Footer() {
         </div>
 
         {/* ABOUT COMPANY */}
-        <div className="col-span-1 text-center sm:text-left mt-4 sm:mt-[64px] lg:mt-[72px]">
-          <h4 className="font-semibold text-slate-900 mb-4 text-sm sm:text-base tracking-wide">
-            About Company
-          </h4>
-          <ul className="space-y-3 text-xs sm:text-sm">
-            <li>
-              <Link to="/Contact" className="hover:text-blue-600 inline-block">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-        </div>
+<div className="col-span-1 pl-6 sm:pl-0 mt-4 sm:mt-[64px] lg:mt-[72px]">
+  <h4 className="font-semibold text-slate-900 mb-3 text-lg sm:text-xl lg:text-2xl">
+    About Company
+  </h4>
+
+  <ul className="space-y-2 text-xs sm:text-sm">
+    <li>
+      <Link to="/Contact" className="hover:text-blue-600 inline-block">
+        Contact Us
+      </Link>
+    </li>
+  </ul>
+</div>
 
         {/* OUR SERVICES */}
-        <div className="sm:col-span-1 lg:col-span-2 text-center sm:text-left mt-4 sm:mt-[64px] lg:mt-[72px]">
-          <h4 className="font-semibold text-slate-900 mb-4 text-sm sm:text-base tracking-wide">
+        <div className="sm:col-span-1 lg:col-span-2 text-left pl-6 sm:pl-25 mt-4 sm:mt-[64px] lg:mt-[72px]">
+          <h4 className="font-semibold text-slate-900 mb-4 text-lg sm:text-xl lg:text-2xl">
             Our Services
           </h4>
           <ul className="space-y-3 text-xs sm:text-sm">

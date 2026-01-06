@@ -3,11 +3,9 @@ import React from 'react';
 const Specialities = () => {
   // Style tag untuk menangani responsivitas secara menyeluruh
   const responsiveStyles = `
-    /* Reset dasar agar tidak ada celah putih di pinggir */
-    * {
+    /* Scoped reset only inside this component */
+    .specialities-root, .specialities-root * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     @media (max-width: 768px) {
@@ -85,7 +83,7 @@ const Specialities = () => {
   `;
 
   return (
-    <div style={{ width: '100%', overflowX: 'hidden' }}>
+    <div className="specialities-root" style={{ width: '100%', overflowX: 'hidden' }}>
       <style>{responsiveStyles}</style>
       
       {/* =========================================
