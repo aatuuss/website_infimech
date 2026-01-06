@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const SLIDES1 = [

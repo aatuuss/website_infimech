@@ -1,8 +1,59 @@
 import React from "react";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   return (
-    <section className="relative bg-white min-h-screen flex items-center py-8 sm:py-12 lg:py-16 overflow-hidden px-4 sm:px-6">
+    <>
+      <SEO
+        title="Contact"
+        description="Get in touch with Infimech — phone, email, and office locations in Jakarta, Yogyakarta and Malang."
+        image="https://www.infimech.tech/img/Logo1.png"
+        jsonLd={[
+          {
+            '@type': 'LocalBusiness',
+            'name': 'Infimech - Jakarta Office',
+            'telephone': '+62 8133 3546 332',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Sovereign Plaza Tower, Jl. TB Simatupang No.36 12th Floor',
+              'addressLocality': 'South Jakarta',
+              'addressRegion': 'Jakarta',
+              'postalCode': '12430',
+              'addressCountry': 'ID'
+            },
+            'url': 'https://www.infimech.tech/contact'
+          },
+          {
+            '@type': 'LocalBusiness',
+            'name': 'Infimech - Yogyakarta Office',
+            'telephone': '+62 8133 3546 332',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Jl. Kaliurang km 4, Gg. Siti Sonya No.10 B 5',
+              'addressLocality': 'Sinduadi',
+              'addressRegion': 'Yogyakarta',
+              'postalCode': '55281',
+              'addressCountry': 'ID'
+            },
+            'url': 'https://www.infimech.tech/contact'
+          },
+          {
+            '@type': 'LocalBusiness',
+            'name': 'Infimech - Malang Office',
+            'telephone': '+62 8133 3546 332',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Jl. Mayang No.08, Bunulrejo',
+              'addressLocality': 'Malang',
+              'addressRegion': 'Jawa Timur',
+              'postalCode': '65123',
+              'addressCountry': 'ID'
+            },
+            'url': 'https://www.infimech.tech/contact'
+          }
+        ]}
+      />
+      <section className="relative bg-white min-h-screen flex items-center py-8 sm:py-12 lg:py-16 overflow-hidden px-4 sm:px-6">
       {/* LOGO BACKGROUND */}
       <img
         src="/img/Logo1.png"
@@ -184,5 +235,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }
