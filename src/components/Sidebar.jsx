@@ -17,9 +17,20 @@ export default function Sidebar() {
       if (!btn || !pop) return;
       const b = btn.getBoundingClientRect();
       const p = pop.getBoundingClientRect();
-      // place popup to the left of the button and vertically centered with the button
-      const left = Math.max(12, b.left - p.width - 12);
-      const top = Math.max(12, Math.round(b.top + b.height / 2 - p.height / 2));
+      // On mobile (narrow screens) place the popup below the top navbar a bit;
+      // on desktop keep the popup to the left and vertically centered with the button.
+      const isMobile = window.innerWidth < 768;
+      let left, top;
+      if (isMobile) {
+        // place popup just below the button/navbar with a small gap
+        top = Math.min(window.innerHeight - p.height - 12, Math.round(b.bottom + 8));
+        // keep popup within viewport horizontally, align start with button
+        left = Math.max(12, Math.round(b.left));
+      } else {
+        // place popup to the left of the button and vertically centered with the button
+        left = Math.max(12, b.left - p.width - 12);
+        top = Math.max(12, Math.round(b.top + b.height / 2 - p.height / 2));
+      }
       setPopupPos({ top, left });
     };
 
@@ -53,13 +64,19 @@ export default function Sidebar() {
       {/* ================= MOBILE TOP NAVBAR ================= */}
       <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow">
         <div className="flex items-center justify-between px-6 py-4">
-          <a href="https://wa.me/6281333546332">
-  <img
-    src="/img/Logo1.png"
-    alt="Infimech"
-    className="h-8 object-contain cursor-pointer"
-  />
-</a>
+          <button
+            ref={buttonRef}
+            onClick={() => setShowWaPopup((s) => !s)}
+            className="relative"
+            title="Hubungi via WhatsApp"
+            aria-label="Hubungi via WhatsApp"
+          >
+            <img
+              src="/img/Logo1.png"
+              alt="Infimech"
+              className="h-8 object-contain cursor-pointer"
+            />
+          </button>
 
 
 
