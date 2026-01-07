@@ -91,6 +91,16 @@ function ChatBot() {
   };
 
   const styles = {
+    backdrop: {
+      display: isOpen ? "block" : "none",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      zIndex: 999,
+      backgroundColor: "transparent",
+    },
     wrapper: {
       position: "fixed",
       bottom: isMobile ? "15px" : "20px",
@@ -215,20 +225,24 @@ function ChatBot() {
     launcher: {
       width: "60px",
       height: "60px",
-      backgroundColor: "#25D366", // Warna Hijau WA
+      backgroundColor: "#ffffff", // Warna Putih
       borderRadius: "50%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       cursor: "pointer",
-      boxShadow: "0 4px 16px rgba(37, 211, 102, 0.4)",
+      boxShadow: "0 4px 16px rgba(0, 0, 0, 0.15)",
       transition: "transform 0.2s ease",
     }
   };
 
   return (
-    <div style={styles.wrapper}>
-      <div style={styles.chatbotPopup}>
+    <>
+      {/* Backdrop untuk menutup popup ketika klik di luar */}
+      <div style={styles.backdrop} onClick={() => setIsOpen(false)} />
+      
+      <div style={styles.wrapper}>
+        <div style={styles.chatbotPopup} onClick={(e) => e.stopPropagation()}>
         {/* Header Baru */}
         <div style={styles.header}>
           <div style={styles.backButton} onClick={() => setIsOpen(false)}>
@@ -283,22 +297,23 @@ function ChatBot() {
         </form>
       </div>
 
-      {/* Launcher Logo WA */}
+      {/* Launcher Logo */}
       <div 
         style={{...styles.launcher, transform: isOpen ? "scale(0.9)" : "scale(1)"}} 
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <span style={{ color: "white", fontSize: "28px", fontWeight: "300" }}>×</span>
+          <span style={{ color: "#000000", fontSize: "28px", fontWeight: "300" }}>×</span>
         ) : (
           <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-            alt="WA Logo" 
-            style={{ width: "35px", height: "35px" }} 
+            src="/img/chatbot.png" 
+            alt="Infimech Logo" 
+            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
           />
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
