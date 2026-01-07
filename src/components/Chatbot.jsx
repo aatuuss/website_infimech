@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 
-// Komponen Ikon Robot
+// Komponen Ikon Robot (PUTIH)
 const RobotIcon = ({ size = 20 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="white">
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="white"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M12 2a2 2 0 0 1 2 2v1h1a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h1V4a2 2 0 0 1 2-2m-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9 16a3 3 0 0 0 6 0H9z" />
   </svg>
 );
+
 
 function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -298,20 +305,23 @@ function ChatBot() {
       </div>
 
       {/* Launcher Logo */}
-      <div 
-        style={{...styles.launcher, transform: isOpen ? "scale(0.9)" : "scale(1)"}} 
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? (
-          <span style={{ color: "#000000", fontSize: "28px", fontWeight: "300" }}>×</span>
-        ) : (
-          <img 
-            src="/img/chatbot.png" 
-            alt="Infimech Logo" 
-            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
-          />
-        )}
-      </div>
+<div 
+  style={{
+    ...styles.launcher,
+    backgroundColor: "#1e40af",
+    transform: isOpen ? "scale(0.9)" : "scale(1)"
+  }} 
+  onClick={() => setIsOpen(!isOpen)}
+>
+  {isOpen ? (
+    <span style={{ color: "white", fontSize: "28px", fontWeight: "300" }}>
+      ×
+    </span>
+  ) : (
+    <RobotIcon size={30} />
+  )}
+</div>
+
       </div>
     </>
   );
