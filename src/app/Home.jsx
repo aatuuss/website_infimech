@@ -293,7 +293,7 @@ export default function Home() {
               with Digital Transformation
             </h1>
 
-            <button className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
+            <Link to="/contact" className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
               <span className="flex items-center gap-2">
                 Contact Us
                 <svg
@@ -310,7 +310,7 @@ export default function Home() {
                   />
                 </svg>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
