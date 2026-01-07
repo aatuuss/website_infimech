@@ -38,24 +38,14 @@ export default function Sidebar() {
     const id = requestAnimationFrame(updatePos);
 
     window.addEventListener("resize", updatePos);
+    // keep updating popup position during scroll so it stays aligned with the button
     window.addEventListener("scroll", updatePos, true);
 
-    // close popup when user scrolls, wheels, or touches the page
-    const onScrollClose = () => setShowWaPopup(false);
-    const onWheelClose = () => setShowWaPopup(false);
-    const onTouchClose = () => setShowWaPopup(false);
-
-    window.addEventListener("scroll", onScrollClose, true);
-    window.addEventListener("wheel", onWheelClose, { passive: true, capture: true });
-    window.addEventListener("touchstart", onTouchClose, { passive: true, capture: true });
-
+    // Do NOT close the popup on scroll/wheel/touch — keep it visible across scrolling
     return () => {
       cancelAnimationFrame(id);
       window.removeEventListener("resize", updatePos);
       window.removeEventListener("scroll", updatePos, true);
-      window.removeEventListener("scroll", onScrollClose, true);
-      window.removeEventListener("wheel", onWheelClose, true);
-      window.removeEventListener("touchstart", onTouchClose, true);
     };
   }, [showWaPopup]);
 
