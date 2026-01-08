@@ -16,7 +16,7 @@ function setOrCreateMeta(name, attr = 'name') {
 
 export default function SEO({ title, description, url, image, jsonLd }) {
   const siteName = 'Infimech'
-  const siteUrl = 'https://www.infimech.tech'
+  const siteUrl = 'https://neww.infimech.tech'
 
   const fullTitle = title ? `${title} — ${siteName}` : siteName
   const metaUrl = url || siteUrl
