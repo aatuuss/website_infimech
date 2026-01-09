@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useMemo, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const SLIDES1 = [
   [
@@ -39,8 +39,22 @@ const SLIDES1 = [
 ];
 
 const ExperiencesPage = () => {
+  const location = useLocation();
   const items = useMemo(() => SLIDES1.flat(), []);
   const [active, setActive] = useState(0);
+
+  // Membaca query parameter untuk menentukan item yang ditampilkan
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const idParam = params.get('id');
+    if (idParam) {
+      const foundIndex = items.findIndex(item => item.id === parseInt(idParam));
+      if (foundIndex !== -1) {
+        setActive(foundIndex);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search, items]);
 
   const total = items.length;
   const slide = items[active];
@@ -56,7 +70,7 @@ const ExperiencesPage = () => {
       <img
         src="/img/Logo1.png"
         alt="Logo Background Right"
-        className="absolute -right-56 top-1/2 w-[700px] -translate-y-1/2 opacity-20 pointer-events-none z-0"
+        className="absolute -right-48 md:-right-32 lg:-right-56 top-1/2 w-[450px] md:w-[500px] lg:w-[700px] -translate-y-1/2 opacity-20 pointer-events-none z-0"
       />
 
       <header className="px-6 py-8 md:px-12 lg:px-20 flex flex-col gap-3 items-start relative z-10">

@@ -1,19 +1,5 @@
 import React, { useEffect } from 'react'
 
-function setOrCreateMeta(name, attr = 'name') {
-  return (content) => {
-    if (!content) return;
-    let selector = `${attr}="${name}"`;
-    let el = document.head.querySelector(`[${selector}]`);
-    if (!el) {
-      el = document.createElement('meta');
-      el.setAttribute(attr, name);
-      document.head.appendChild(el);
-    }
-    el.setAttribute('content', content);
-  }
-}
-
 export default function SEO({ title, description, url, image, jsonLd }) {
   const siteName = 'Infimech'
   const siteUrl = 'https://infimech.tech'

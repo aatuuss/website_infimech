@@ -7,12 +7,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10">
 
         {/* COMPANY INFO */}
-        <div className="space-y-5 lg:col-span-2 text-center lg:text-left pb-3 sm:pb-0">
-          <img
-            src="/img/logo4.png"
-            alt="Infimech Logo"
-            className="h-9 sm:h-12 lg:h-14 object-contain mx-auto lg:mx-0"
-          />
+          <div className="space-y-5 sm:col-span-2 lg:col-span-2 text-center lg:text-left pb-3 sm:pb-0">
+            <Link to="/home">
+              <img
+                src="/img/logo4.png"
+                alt="Infimech Logo"
+                className="h-9 sm:h-12 lg:h-14 object-contain mx-auto lg:mx-0 cursor-pointer"
+              />
+            </Link>
 
           <p className="font-semibold text-lg sm:text-xl lg:text-2xl text-slate-900">
             PT Infimech Harmoni Teknologi
@@ -41,53 +43,56 @@ export default function Footer() {
               </div>
             </a>
 
-            {/* YOGYAKARTA OFFICE */}
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Jl.+Kaliurang+KM+4.5+gg.+Siti+Sonya,+Ruko+Omah+Mborek+No.2,+Sleman,+Yogyakarta+55281"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
-                         sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
-            >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <p className="font-semibold text-sm sm:text-base text-slate-900">
-                  Yogyakarta Office
-                </p>
-                <p className="text-slate-600 leading-relaxed">
-                  Jl. Kaliurang KM 4.5 gg. Siti Sonya, Sleman, Yogyakarta 55281
-                </p>
-              </div>
-            </a>
+            {/* YOGYAKARTA & MALANG - iPad Grid Layout */}
+            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
+              {/* YOGYAKARTA OFFICE */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Jl.+Kaliurang+KM+4.5+gg.+Siti+Sonya,+Ruko+Omah+Mborek+No.2,+Sleman,+Yogyakarta+55281"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
+                           sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <p className="font-semibold text-sm sm:text-base text-slate-900">
+                    Yogyakarta Office
+                  </p>
+                  <p className="text-slate-600 leading-relaxed">
+                    Jl. Kaliurang KM 4.5 gg. Siti Sonya, Sleman, Yogyakarta 55281
+                  </p>
+                </div>
+              </a>
 
-            {/* MALANG OFFICE */}
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayang+08,+Bunulrejo,+Blimbing,+Kota+Malang,+Jawa+Timur+65123"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
-                         sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
-            >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <p className="font-semibold text-sm sm:text-base text-slate-900">
-                  Malang Office
-                </p>
-                <p className="text-slate-600 leading-relaxed">
-                  Jl. Mayang 08, Kota Malang, Jawa Timur 65123
-                </p>
-              </div>
-            </a>
+              {/* MALANG OFFICE */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayang+08,+Bunulrejo,+Blimbing,+Kota+Malang,+Jawa+Timur+65123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
+                           sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <p className="font-semibold text-sm sm:text-base text-slate-900">
+                    Malang Office
+                  </p>
+                  <p className="text-slate-600 leading-relaxed">
+                    Jl. Mayang 08, Kota Malang, Jawa Timur 65123
+                  </p>
+                </div>
+              </a>
+            </div>
 
           </div>
         </div>
 
         {/* ABOUT COMPANY */}
-<div className="col-span-1 pl-6 sm:pl-0 mt-4 sm:mt-[64px] lg:mt-[72px]">
+<div className="col-span-1 pl-6 sm:pl-0 mt-4 sm:mt-0 lg:mt-[72px]">
   <h4 className="font-semibold text-slate-900 mb-3 text-lg sm:text-xl lg:text-2xl">
     About Company
   </h4>
@@ -102,7 +107,7 @@ export default function Footer() {
 </div>
 
         {/* OUR SERVICES */}
-        <div className="sm:col-span-1 lg:col-span-2 text-left pl-6 sm:pl-25 mt-4 sm:mt-[64px] lg:mt-[72px]">
+        <div className="sm:col-span-1 lg:col-span-2 text-left pl-6 sm:pl-0 mt-4 sm:mt-0 lg:mt-[72px]">
           <h4 className="font-semibold text-slate-900 mb-4 text-lg sm:text-xl lg:text-2xl">
             Our Services
           </h4>

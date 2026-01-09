@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import { createPortal } from "react-dom";
 
@@ -51,8 +51,8 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* ================= MOBILE TOP NAVBAR ================= */}
-      <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow">
+      {/* ================= MOBILE & TABLET TOP NAVBAR ================= */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow">
         <div className="flex items-center justify-between px-6 py-4">
           <button
             ref={buttonRef}
@@ -84,18 +84,18 @@ export default function Sidebar() {
         )}
       </header>
 
-      {/* SPACER MOBILE */}
-      <div className="md:hidden h-16" />
+      {/* SPACER MOBILE & TABLET */}
+      <div className="lg:hidden h-16" />
 
       {/* ================= DESKTOP SIDEBAR ================= */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="hidden md:block fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+          className="hidden lg:block fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
         />
       )}
 
-      <div className="hidden md:block fixed top-0 right-0 z-50 h-screen">
+      <div className="hidden lg:block fixed top-0 right-0 z-50 h-screen">
         <div className="h-full flex bg-[#EBE9FF] shadow-lg rounded-l-[32px] overflow-hidden">
 
           {open && (
