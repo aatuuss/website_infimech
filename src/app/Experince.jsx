@@ -16,7 +16,6 @@ const Experience = () => {
   // Breakpoints Logic
   const isMobile = windowWidth <= 767;
   const isTablet = windowWidth >= 768 && windowWidth <= 1024; // iPad Portrait & Landscape
-  const isDesktop = windowWidth > 1024;
 
   const experienceData = {
     '2019': {
