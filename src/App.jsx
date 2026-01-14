@@ -5,6 +5,7 @@ import Contact from "./app/Contact";
 import Servis from "./app/Servis";
 import Specialities from "./app/Specialities";
 import Experince from "./app/Experince";
+import SimulasiCFD from "./app/SimulasiCFD";
 
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
@@ -34,6 +35,7 @@ export default function App() {
               path="/detailexperiencesPage/:id"
               element={<DetailExperiencesPage />}
             />
+            <Route path="/jasa-simulasi-cfd" element={<SimulasiCFD />} />
           </Routes>
 
           <Footer />
