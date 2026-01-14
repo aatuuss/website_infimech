@@ -48,11 +48,40 @@ export default function SimulasiCFD() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-16 max-w-5xl">
-      {/* Judul Utama - Centered */}
-      <h2 className="text-5xl md:text-5xl font-bold text-slate-900 mb-8 text-center">
-        JASA SIMULASI CFD
-      </h2>
+    <div>
+      {/* Hero Banner Section */}
+      <div 
+        className="relative w-full h-96 md:h-screen bg-cover bg-center flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: 'url(/img/simulasicfd.jpg)',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-2xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            JASA SIMULASI CFD
+          </h1>
+          <p className="text-lg md:text-xl mb-8 leading-relaxed">
+            Analisis aliran fluida dengan teknologi CFD terdepan untuk mengoptimalkan desain dan performa produk Anda
+          </p>
+          <a
+            href="#info"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+          >
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-12 md:py-16 max-w-5xl">
+        {/* Judul Utama - Centered */}
+        <h2 id="info" className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center">
+          Tentang Simulasi CFD
+        </h2>
 
       {/* Sub Judul */}
       <h2 className="text-xl font-bold text-slate-700 mb-12 text-center">
@@ -95,12 +124,10 @@ export default function SimulasiCFD() {
         <p>
           Secara keseluruhan, jasa simulasi CFD merupakan alat yang sangat berharga dalam mengatasi masalah teknik dan ilmiah yang melibatkan aliran fluida. Dengan kemampuannya untuk memberikan prediksi yang akurat dan wawasan yang mendalam, jasa simulasi CFD terus menjadi komponen krusial dalam inovasi dan pengembangan teknologi di berbagai sektor industri.
         </p>
-
-<div className="w-full py-2 md:py-2 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto">
+      </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4 mt-12">
           {items.map((item) => (
             <div
               key={item.id}
@@ -148,8 +175,6 @@ export default function SimulasiCFD() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
 
         {/* Project Info */}
         <div className="mt-12 md:mt-14">
