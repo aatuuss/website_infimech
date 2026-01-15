@@ -34,61 +34,56 @@ export default function Footer() {
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
               <div>
-                <p className="font-semibold text-sm sm:text-base text-slate-900">
+                <p className="font-semibold text-sm sm:text-base text-slate-900 text-left">
                   Jakarta Office
                 </p>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed md:text-left">
                   Sovereign Plaza Tower, Jl. TB Simatupang No.36 12th Floor, South Jakarta City, Jakarta 12430
                 </p>
               </div>
             </a>
 
-            {/* YOGYAKARTA & MALANG - Sejajar di iPad */}
-            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0 md:justify-items-center">
-              {/* YOGYAKARTA OFFICE */}
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Jl.+Kaliurang+KM+4.5+gg.+Siti+Sonya,+Ruko+Omah+Mborek+No.2,+Sleman,+Yogyakarta+55281"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
-                           sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600
-                           md:flex-col md:items-center md:text-center md:max-w-xs"
-              >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0 md:mt-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <div>
-                  <p className="font-semibold text-sm sm:text-base text-slate-900 md:text-center">
-                    Yogyakarta Office
-                  </p>
-                  <p className="text-slate-600 leading-relaxed md:text-center">
-                    Jl. Kaliurang KM 4.5 gg. Siti Sonya, Sleman, Yogyakarta 55281
-                  </p>
-                </div>
-              </a>
+            {/* YOGYAKARTA OFFICE */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Jl.+Kaliurang+KM+4.5+gg.+Siti+Sonya,+Ruko+Omah+Mborek+No.2,+Sleman,+Yogyakarta+55281"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
+                         sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <p className="font-semibold text-sm sm:text-base text-slate-900 text-left">
+                  Yogyakarta Office
+                </p>
+                <p className="text-slate-600 leading-relaxed md:text-left">
+                  Jl. Kaliurang KM 4.5 gg. Siti Sonya, Sleman, Yogyakarta 55281
+                </p>
+              </div>
+            </a>
 
-              {/* MALANG OFFICE */}
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayang+08,+Bunulrejo,+Blimbing,+Kota+Malang,+Jawa+Timur+65123"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
-                           sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600
-                           md:flex-col md:items-center md:text-center md:max-w-xs"
-              >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0 md:mt-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <div>
-                  <p className="font-semibold text-sm sm:text-base text-slate-900 md:text-center">
-                    Malang Office
-                  </p>
-                  <p className="text-slate-600 leading-relaxed md:text-center">
-                    Jl. Mayang 08, Kota Malang, Jawa Timur 65123
-                  </p>
-                </div>
-              </a>
-            </div>
+            {/* MALANG OFFICE */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayang+08,+Bunulrejo,+Blimbing,+Kota+Malang,+Jawa+Timur+65123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition
+                         sm:bg-transparent sm:p-0 sm:rounded-none hover:text-blue-600"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <p className="font-semibold text-sm sm:text-base text-slate-900 text-left">
+                  Malang Office
+                </p>
+                <p className="text-slate-600 leading-relaxed md:text-left">
+                  Jl. Mayang 08, Kota Malang, Jawa Timur 65123
+                </p>
+              </div>
+            </a>
 
           </div>
         </div>

@@ -67,19 +67,7 @@ export default function Servis() {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        .specialities-grid {
-          display: grid;
-          grid-template-columns: 40% 58%; 
-          gap: 2%;
-          margin-top: 40px;
-        }
-
-        .spec-right-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
+        /* Glassmorphism Effect */
         .glass-overlay {
           background: rgba(255, 255, 255, 0.10); 
           backdrop-filter: blur(8px);
@@ -96,58 +84,90 @@ export default function Servis() {
           opacity: 0.7;
         }
 
-        /* ================= RESPONSIVE MOBILE FIX ================= */
-        @media (max-width: 980px) {
-          /* Hero Mobile */
-          .servis-hero {
-            height: auto !important;
-            min-height: 600px !important;
-            padding: 120px 20px 60px 20px !important;
-            display: flex !important;
+
+        /* ================= DESKTOP & IPAD LAYOUT (Side by Side) ================= */
+        .specialities-grid {
+          display: grid;
+          grid-template-columns: 40% 58%; 
+          gap: 2%;
+          margin-top: 40px;
+        }
+
+        .spec-right-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        /* Category Image Container - Desktop Styling */
+        .category-img-container {
+          width: 100%;
+          height: 100%;
+          border-radius: 40px;
+          border: 18px solid #E8E8E8;
+          overflow: hidden;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #f5f5f5;
+          box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+        }
+
+        .category-img-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        /* ================= IPAD SPECIFIC RESPONSIVE (Ramping & Stacked) ================= */
+        @media (min-width: 768px) and (max-width: 1024px) {
+          .services-cards {
+            grid-template-columns: 1fr !important;
+            max-width: 550px !important;
+            margin: 0 auto !important;
+            gap: 40px !important;
+          }
+
+          .web-pm-card {
+            grid-template-columns: 1fr !important;
+            max-width: 550px !important;
+            margin: 0 auto !important;
+          }
+
+          .category-container {
             flex-direction: column !important;
-            justify-content: center !important;
-            align-items: flex-start !important;
+            text-align: center !important;
           }
-
-          .hero-overlay-custom {
-            clip-path: none !important;
-            background: linear-gradient(90deg, rgba(14, 54, 100, 0.9) 0%, rgba(14, 54, 100, 0.4) 100%) !important;
-            width: 100% !important;
+          .category-container div:first-child {
+            max-width: 500px !important;
+            margin: 0 auto !important;
           }
+          .category-nav { justify-content: center !important; gap: 100px !important; margin-bottom: 30px; }
 
-          .hero-logo-link {
-            top: 30px !important;
-            left: 20px !important;
+        /* iPad Specialities Layout */
+          .specialities-grid {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
           }
+        }
 
-          .hero-logo-img {
-            width: 180px !important;
-          }
-
-          .hero-content {
-            width: 100% !important;
-            padding-left: 0 !important;
-            margin-top: 0 !important;
-          }
-
-          .hero-title {
-            font-size: 32px !important;
-            line-height: 1.1 !important;
-          }
-
-          .hero-desc {
-            font-size: 15px !important;
+        /* ================= MOBILE ONLY (Stacked) ================= */
+        @media (max-width: 767px) {
+          .servis-hero { height: auto !important; min-height: 600px !important; padding: 120px 20px 60px 20px !important; }
+          .hero-overlay-custom { clip-path: none !important; background: rgba(14, 54, 100, 0.8) !important; width: 100% !important; }
+          .hero-content { width: 100% !important; padding-left: 0 !important; }
+          .hero-title { font-size: 32px !important; }
+          
+          .services-cards, .web-pm-card, .specialities-grid {
+            grid-template-columns: 1fr !important;
             max-width: 100% !important;
           }
-
-          /* Content Mobile */
-          .services-cards { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .web-pm-card { grid-template-columns: 1fr !important; padding: 20px !important; text-align: center; }
-          .web-pm-content { margin-left: 0 !important; margin-top: 15px; }
-          .category-container { flex-direction: column-reverse !important; text-align: center !important; gap: 30px !important; }
+          .category-container { flex-direction: column !important; text-align: center !important; }
           .category-nav { justify-content: center !important; gap: 40px !important; }
-          .specialities-grid { grid-template-columns: 1fr !important; }
-          .spec-mini-label-box { width: 85% !important; }
         }
       `}</style>
 
