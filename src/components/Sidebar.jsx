@@ -80,7 +80,7 @@ export default function Sidebar() {
             <MobileMenu to="/Servis" label="Our Services" />
             <MobileMenu to="/Specialities" label="Our Specialities" />
             <MobileMenu to="/Experince" label="Our Experiences" />
-            <MobileMenu to="/jasa-simulasi-cfd" label="Simulasi CFD" />
+            <MobileMenu to="/SimulasiCFD" label="Simulasi CFD" />
           </nav>
         )}
       </header>
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 <DesktopMenu to="/Servis" label="Our Services" />
                 <DesktopMenu to="/Specialities" label="Our Specialities" />
                 <DesktopMenu to="/Experince" label="Our Experiences" />
-                <DesktopMenu to="/jasa-simulasi-cfd" label="Simulasi CFD" />
+                <DesktopMenu to="/SimulasiCFD" label="Simulasi CFD" />
               </nav>
             </div>
           )}
