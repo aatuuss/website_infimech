@@ -288,7 +288,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-1 flex-col justify-center md:-mt-40">
-            <h1 className="mb-6 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+            <h1 className="mb-6 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-8xlxl font-semibold leading-tight">
               Engineering Solutions <br />
               with Digital Transformation
             </h1>

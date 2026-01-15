@@ -51,29 +51,81 @@ export default function SimulasiCFD() {
     <div>
       {/* Hero Banner Section */}
       <div 
-        className="relative w-full h-96 md:h-screen bg-cover bg-center flex items-center justify-center overflow-hidden"
+        className="relative w-full h-screen bg-cover bg-center flex items-center overflow-hidden"
         style={{
           backgroundImage: 'url(/img/simulasicfd.jpg)',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'fixed',
+          fontFamily: "'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
         }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
         
+        {/* LOGO */}
+        <a 
+          href="/" 
+          style={{ 
+            position: 'absolute', 
+            top: '40px',
+            left: '8%',
+            zIndex: 10 
+          }}
+        >
+          <img 
+            src="/img/logo2.png" 
+            alt="Logo" 
+            style={{ 
+              width: 'clamp(140px, 15vw, 250px)', 
+              height: 'auto' 
+            }} 
+          />
+        </a>
+
         {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-2xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <div className="relative z-10 text-white px-4 md:px-[8%] max-w-[850px] w-full" style={{ marginTop: '80px' }}>
+          
+          {/* BREADCRUMB */}
+          <div style={{ display: 'flex', marginBottom: '25px' }}>
+            <div style={{ 
+              backgroundColor: 'rgba(60, 90, 140, 0.6)', 
+              padding: '8px 20px', 
+              borderRadius: '50px', 
+              fontSize: '14px', 
+              backdropFilter: 'blur(4px)' 
+            }}>
+              <a href="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: '700' }}>Home</a>
+              <span style={{ margin: '0 8px' }}>&rsaquo;</span>
+              <span style={{ opacity: 0.9 }}>Simulasi CFD</span>
+            </div>
+          </div>
+
+          {/* HERO TITLE */}
+          <h1 style={{ 
+            fontSize: 'clamp(36px, 6vw, 60px)', 
+            fontWeight: '900', 
+            marginBottom: '20px', 
+            marginTop: 0,
+            textTransform: 'uppercase', 
+            textShadow: '0px 4px 10px rgba(0,0,0,0.5)',
+            lineHeight: '1.1',
+            position: 'relative',
+            zIndex: 10
+          }}>
             JASA SIMULASI CFD
           </h1>
-          <p className="text-lg md:text-xl mb-8 leading-relaxed">
+
+          {/* HERO DESCRIPTION */}
+          <div style={{
+            backgroundColor: 'rgba(60, 90, 140, 0.5)',
+            padding: '30px 35px',
+            borderRadius: '15px',
+            fontSize: 'clamp(15px, 1.2vw, 18px)',
+            lineHeight: '1.7',
+            backdropFilter: 'blur(6px)',
+            maxWidth: '100%'
+          }}>
             Analisis aliran fluida dengan teknologi CFD terdepan untuk mengoptimalkan desain dan performa produk Anda
-          </p>
-          <a
-            href="#info"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
-          >
-            Lihat Selengkapnya
-          </a>
+          </div>
         </div>
       </div>
 
@@ -127,48 +179,61 @@ export default function SimulasiCFD() {
       </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-16">
           {items.map((item) => (
             <div
               key={item.id}
-              className=""
+              className="group"
             >
               {/* Card Container */}
-              <div className="h-full flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <div className="h-full flex flex-col bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
                 
                 {/* Image Container */}
-                <div className="relative h-40 md:h-48 overflow-hidden bg-gray-200">
+                <div className="relative h-40 md:h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                   />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
                 {/* Content Container */}
-                <div className="flex-1 p-4 md:p-5 flex flex-col">
+                <div className="flex-1 p-4 md:p-5 flex flex-col bg-gradient-to-b from-white to-gray-50">
                   
                   {/* Title */}
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 leading-tight">
+                  <h3 className="text-base md:text-lg font-bold text-[#274C77] mb-2 leading-tight group-hover:text-[#3B6C8D] transition-colors duration-300">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-xs md:text-sm mb-4 flex-1 line-clamp-2">
+                  <p className="text-gray-600 text-xs md:text-sm mb-3 flex-1 leading-relaxed line-clamp-2">
                     {item.description}
                   </p>
 
-                  {/* Info Section */}
-                  <div className="space-y-2 mb-4 pt-3 border-t border-gray-200">
-                  </div>
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent mb-3"></div>
 
                   {/* View More Link */}
                   <a
                     href={item.link}
-                    className="inline-flex items-center gap-2 text-[#3B6C8D] hover:text-[#3B6C8D] font-semibold text-sm transition-colors duration-300 group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#3B6C8D] hover:text-[#274C77] font-bold text-sm transition-all duration-300 group/link"
                   >
-                    View More
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    <span className="relative">
+                      View Report
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#274C77] group-hover/link:w-full transition-all duration-300"></span>
+                    </span>
+                    <svg 
+                      className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
                   </a>
                 </div>
               </div>

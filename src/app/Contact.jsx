@@ -80,7 +80,7 @@ export default function Contact() {
                 try {
                   // prefer normal anchor but fallback to window.open if needed
                   // keep default behavior for normal clicks
-                } catch (err) {
+                } catch {
                   e.preventDefault();
                   window.open('https://wa.me/6281333546332', '_blank');
                 }
