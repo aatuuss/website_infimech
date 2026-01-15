@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const SLIDES1 = [
@@ -89,7 +90,7 @@ const CLIENT_LOGOS = [
   { id: 41, src: "/img/client/tentara-nasional-angkatan-udara.png", alt: "TNI AU", url: "https://www.tni-au.mil.id" },
   { id: 42, src: "/img/client/timas.png", alt: "Timas", url: "https://www.timas.com/" },
   { id: 43, src: "/img/client/tripatra.png", alt: "Tripatra", url: "https://www.tripatra.com" },
-  { id: 44, src: "/img/client/ugm.png", alt: "UGM", url: "https://www.ugm.ac.id" },
+  { id: 44, src: "/img/client/ugm.png", alt: "UGM", url: "https://ugm.ac.id/id/" },
   { id: 46, src: "/img/client/um.png", alt: "UM", url: "https://um.ac.id/" },
   { id: 47, src: "/img/client/umm.png", alt: "UMM", url: "https://www.umm.ac.id" },
   { id: 48, src: "/img/client/uns.png", alt: "UNS", url: "https://uns.ac.id/id/" },
@@ -211,8 +212,10 @@ export default function Home() {
 
   const angle = 360 / services.length;
 
-  const outerRadius = 120;
-  const innerRadius = 102;
+  const outerRadius = 128;
+  const innerRadius = 96;
+
+  const middleRadius = Math.round((outerRadius + innerRadius) / 2);
 
   const startAngle = serviceIdx * angle;
   const endAngle = startAngle + angle;
@@ -232,21 +235,28 @@ export default function Home() {
     return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`;
   };
 
-  const title = services[serviceIdx].title.toUpperCase();
-  const splitIndex =
-    title.length > 22 ? Math.ceil(title.length / 2) : title.length;
+  const title = services[serviceIdx].title.toUpperCase().trim();
+  const words = title.split(/\s+/);
+  let line1 = "", line2 = "", line3 = "";
 
-  const line1 = title.slice(0, splitIndex);
-  const line2 = title.slice(splitIndex);
+  if (words.length <= 3) {
+    line1 = words[0] || "";
+    line2 = words[1] || "";
+    line3 = words[2] || "";
+  } else {
+    line1 = words[0];
+    line3 = words[words.length - 1];
+    line2 = words.slice(1, words.length - 1).join(" ");
+  }
 
   return (
     <section className="bg-[#FFFFFF]">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-screen md:h-screen w-full overflow-hidden">
+      <section className="relative min-h-[65vh] md:h-screen w-full overflow-hidden">
         <img
           src="/img/about.jpg"
           alt="Hero Background"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-center"
         />
 
         <div className="pointer-events-none absolute inset-0 z-0">
@@ -283,9 +293,9 @@ export default function Home() {
               with Digital Transformation
             </h1>
 
-            <button className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
+            <Link to="/contact" className="group w-fit rounded-full bg-white px-8 sm:px-10 py-3 sm:py-3.5 font-semibold text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50 text-sm sm:text-base">
               <span className="flex items-center gap-2">
-                Contact
+                Contact Us
                 <svg
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -300,7 +310,7 @@ export default function Home() {
                   />
                 </svg>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -313,9 +323,9 @@ export default function Home() {
           alt="Logo Background"
           className="
       absolute
-      -left-56
+      -left-56 md:-left-48 lg:-left-56
       top-1/2
-      w-[700px]
+      w-[400px] md:w-[500px] lg:w-[700px]
       -translate-y-1/2
       opacity-19
       pointer-events-none
@@ -324,69 +334,71 @@ export default function Home() {
         />
 
         {/* ================= ABOUT COMPANY ================= */}
-        <section className="relative z-10 py-10 lg:py-10 px-4 sm:px-6">
-          <div className="mx-auto max-w-7xl grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+        <section className="relative z-10 py-8 sm:py-10 lg:py-10 px-4 sm:px-6">
+          <div className="mx-auto max-w-7xl lg:max-w-7xl md:max-w-[700px] grid grid-cols-1 gap-6 sm:gap-8 lg:gap-16 lg:grid-cols-2 items-center md:px-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 md:max-w-full md:mx-0">
               <img
                 src="/img/meeting.jpg"
-                className="h-32 sm:h-40 md:h-48 w-full rounded-xl object-cover"
+                className="h-28 sm:h-36 md:h-40 lg:h-48 w-full rounded-lg sm:rounded-xl object-cover"
               />
               <img
                 src="/img/meeting1.jpg"
-                className="h-32 sm:h-40 md:h-48 w-full rounded-xl object-cover"
+                className="h-28 sm:h-36 md:h-40 lg:h-48 w-full rounded-lg sm:rounded-xl object-cover"
               />
               <img
                 src="/img/meeting2.jpg"
-                className="col-span-2 h-40 sm:h-56 md:h-60 w-full rounded-xl object-cover"
+                className="col-span-2 h-32 sm:h-44 md:h-48 lg:h-60 w-full rounded-lg sm:rounded-xl object-cover"
               />
             </div>
 
-            <div className="px-2 sm:px-0">
-              <h2 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#3B6C8D]">
-                ABOUT COMPANY
-              </h2>
+            <div className="px-0 sm:px-0 md:ml-0">
+              <div className="md:max-w-full">
+                <h2 className="mb-3 sm:mb-4 md:mb-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3B6C8D]">
+                  ABOUT COMPANY
+                </h2>
 
-              <p className="mb-3 sm:mb-4 text-sm sm:text-base text-black leading-relaxed">
-                PT Infimech Harmoni Teknologi is an Indonesian startup providing
-                engineering consultancy, simulation, and training services.
-              </p>
+                <p className="mb-2 sm:mb-3 md:mb-4 text-xs sm:text-sm md:text-base text-black leading-relaxed">
+                  PT Infimech Harmoni Teknologi is an Indonesian startup providing
+                  engineering consultancy, simulation, and training services.
+                </p>
 
-              <p className="mb-6 sm:mb-10 text-sm sm:text-base text-black leading-relaxed">
-                We help industries optimize design, improve performance, and
-                solve complex engineering problems using digital tools.
-              </p>
+                <p className="mb-6 sm:mb-8 md:mb-8 lg:mb-10 text-xs sm:text-sm md:text-base text-black leading-relaxed">
+                  We help industries optimize design, improve performance, and
+                  solve complex engineering problems using digital tools.
+                </p>
 
-              <div className="mb-8 sm:mb-10 grid grid-cols-3 gap-4 sm:gap-8">
-                <div>
-                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Project Done</p>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">150+</p>
+                <div className="mb-6 sm:mb-8 md:mb-8 grid grid-cols-3 gap-3 sm:gap-6 md:gap-6">
+                  <div>
+                    <p className="text-xs text-[#3B6C8D] mb-1">Project Done</p>
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3B6C8D]">150+</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#3B6C8D] mb-1">Clients</p>
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3B6C8D]">50+</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#3B6C8D] mb-1">Partners</p>
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3B6C8D]">10+</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Clients</p>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">50+</p>
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-[#3B6C8D]">Partners</p>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#3B6C8D]">10+</p>
-                </div>
+
+                <Link to="/Experince" className="group inline-flex items-center gap-2 rounded-full bg-[#3B6C8D] px-5 sm:px-8 md:px-9 py-2 sm:py-2.5 md:py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#345F7C] text-xs sm:text-sm md:text-base">
+                  What We Do
+                  <svg
+                    className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
               </div>
-
-              <button className="group inline-flex items-center gap-2 rounded-full bg-[#3B6C8D] px-6 sm:px-9 py-2.5 sm:py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#345F7C] text-sm sm:text-base">
-                What We Do
-                <svg
-                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
             </div>
           </div>
         </section>
@@ -490,12 +502,16 @@ export default function Home() {
                     d={arcPath(160, 160, outerRadius, startAngle, endAngle)}
                   />
                   <path
+                    id="arcMiddle"
+                    d={arcPath(160, 160, middleRadius, startAngle, endAngle)}
+                  />
+                  <path
                     id="arcInner"
                     d={arcPath(160, 160, innerRadius, startAngle, endAngle)}
                   />
                 </defs>
 
-                <text fill="white" fontSize="16" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
+                <text fill="white" fontSize="18" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
                   <textPath
                     href="#arcOuter"
                     startOffset="50%"
@@ -508,7 +524,21 @@ export default function Home() {
                 </text>
 
                 {line2 && (
-                  <text fill="white" fontSize="15" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '0.5px' }}>
+                  <text fill="white" fontSize="16" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
+                    <textPath
+                      href="#arcMiddle"
+                      startOffset="50%"
+                      textAnchor="middle"
+                      side="left"
+                      dominantBaseline="text-after-edge"
+                    >
+                      {line2}
+                    </textPath>
+                  </text>
+                )}
+
+                {line3 && (
+                  <text fill="white" fontSize="15" fontWeight="700" className="text-xs sm:text-sm" style={{ letterSpacing: '1px' }}>
                     <textPath
                       href="#arcInner"
                       startOffset="50%"
@@ -516,7 +546,7 @@ export default function Home() {
                       side="left"
                       dominantBaseline="text-after-edge"
                     >
-                      {line2}
+                      {line3}
                     </textPath>
                   </text>
                 )}
@@ -573,7 +603,7 @@ export default function Home() {
         <img
           src="/img/Logo1.png"
           alt="Logo Background"
-          className="absolute -right-32 sm:-right-48 lg:-right-56 top-1/2 w-[400px] sm:w-[500px] lg:w-[700px] -translate-y-1/2 opacity-19 pointer-events-none z-0"
+          className="absolute -right-32 md:-right-24 sm:-right-48 lg:-right-56 top-1/2 w-[400px] md:w-[500px] lg:w-[700px] -translate-y-1/2 opacity-19 pointer-events-none z-0"
         />
         
         <div className="mx-auto max-w-7xl text-center relative z-10">
@@ -689,14 +719,14 @@ export default function Home() {
           </div>
 
           {/* LOGO GRID */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-3 lg:gap-6 items-center justify-items-center">
             {CLIENT_LOGOS.map((logo) => (
               <a
                 key={logo.id}
                 href={logo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-16 sm:h-20 lg:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition duration-300 cursor-pointer p-2"
+                className="w-full h-16 sm:h-20 md:h-20 lg:h-24 flex items-center justify-center grayscale hover:grayscale-0 active:grayscale-0 transition duration-300 cursor-pointer p-1 md:p-1.5"
               >
                 <img
                   src={logo.src}
@@ -722,10 +752,12 @@ export default function Home() {
 
           {/* CARD SLIDER */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10">
-            {SLIDES1[expIdx % SLIDES1.length].map((item) => (
+            {SLIDES1[expIdx % SLIDES1.length].map((item, index) => (
               <div
                 key={item.id}
-                className="bg-white rounded-[16px] sm:rounded-[24px] overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow"
+                className={`bg-white rounded-[16px] sm:rounded-[24px] overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow ${
+                  index === 2 ? 'sm:col-span-2 sm:max-w-md sm:mx-auto lg:col-span-1 lg:max-w-none' : ''
+                }`}
               >
                 {/* IMAGE */}
                 <div className="h-32 sm:h-40 md:h-48 lg:h-[200px] overflow-hidden">
@@ -746,7 +778,7 @@ export default function Home() {
 
                   <div className="pt-3 sm:pt-4">
                     <Link
-                      to="/experiences"
+                      to={`/experiencesPage?id=${item.id}`}
                       className="text-xs sm:text-sm text-[#274C77] font-medium hover:underline"
                     >
                       Explore More →

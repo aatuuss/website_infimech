@@ -5,16 +5,19 @@ import Contact from "./app/Contact";
 import Servis from "./app/Servis";
 import Specialities from "./app/Specialities";
 import Experince from "./app/Experince";
+import SimulasiCFD from "./app/SimulasiCFD";
 
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-
+import ScrollToTop from "./components/ScrollToTop";
+import Chatbot from "./components/Chatbot";
 import ExperiencesPage from "./app/ExperiencesPage";
 import DetailExperiencesPage from "./app/DetailExperiencesPage";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen relative bg-slate-50">
         <Sidebar />
 
@@ -25,15 +28,18 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/servis" element={<Servis />} />
             <Route path="/specialities" element={<Specialities />} />
+            <Route path="/chatbot" element={<Chatbot />} />
             <Route path="/experince" element={<Experince />} />
-            <Route path="/experiences" element={<ExperiencesPage />} />
+            <Route path="/experiencesPage" element={<ExperiencesPage />} />
             <Route
-              path="/detailexperiences"
+              path="/detailexperiencesPage/:id"
               element={<DetailExperiencesPage />}
             />
+            <Route path="/jasa-simulasi-cfd" element={<SimulasiCFD />} />
           </Routes>
 
           <Footer />
+        <Chatbot />
         </main>
       </div>
     </BrowserRouter>
