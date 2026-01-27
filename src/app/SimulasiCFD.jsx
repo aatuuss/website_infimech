@@ -147,10 +147,37 @@ export default function SimulasiCFD() {
           }}>
             Analisis aliran fluida dengan teknologi CFD terdepan untuk mengoptimalkan desain dan performa produk Anda
           </div>
+
+          <div className="mt-4 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://wa.me/6281333546332"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-5 py-3 text-white font-semibold shadow-lg hover:-translate-y-0.5 transition"
+            >
+              Konsultasi WhatsApp
+            </a>
+            <a
+              href="#cfd-cases"
+              className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-5 py-3 text-white font-semibold shadow hover:-translate-y-0.5 transition"
+            >
+              Lihat Studi Kasus
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16 max-w-5xl">
+        {/* Studi Kasus Ringkas */}
+        <section id="cfd-cases" className="mb-12 rounded-2xl bg-blue-50/70 border border-blue-100 p-6 md:p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-[#0f172a] mb-4">Studi Kasus Singkat</h3>
+          <ul className="list-disc pl-5 space-y-2 text-slate-800">
+            <li><strong>Industri Maritim:</strong> Reduksi kebisingan desain kapal & optimasi aliran hull.</li>
+            <li><strong>Energi:</strong> Optimasi cooling water tank untuk stabilitas termal.</li>
+            <li><strong>Dirgantara:</strong> Simulasi aerodinamika komponen pesawat (F-16) dengan OpenFOAM berlisensi.</li>
+          </ul>
+        </section>
+
         {/* Judul Utama - Centered */}
         <h2 id="info" className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center">
           Tentang Simulasi CFD
