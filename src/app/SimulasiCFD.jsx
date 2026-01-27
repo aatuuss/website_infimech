@@ -55,7 +55,7 @@ export default function SimulasiCFD() {
     getCFDFAQSchema(),
     getBreadcrumbSchema([
       { name: 'Home', url: 'https://infimech.tech' },
-      { name: 'Jasa Simulasi CFD', url: 'https://infimech.tech/simulasi-cfd' }
+      { name: 'Jasa Simulasi CFD', url: 'https://infimech.tech/jasa-simulasi-cfd' }
     ])
   ];
 
@@ -64,7 +64,7 @@ export default function SimulasiCFD() {
       <SEO
         title="Jasa Simulasi CFD - Computational Fluid Dynamics Indonesia"
         description="Jasa simulasi CFD profesional untuk analisis aliran fluida dengan OpenFOAM berlisensi. Melayani industri maritim, dirgantara, energi, kimia, konstruksi. 100+ proyek sukses. Konsultasi gratis."
-        url="https://infimech.tech/simulasi-cfd"
+        url="https://infimech.tech/jasa-simulasi-cfd"
         image="https://infimech.tech/img/simulasicfd.jpg"
         imageAlt="Jasa Simulasi CFD - Analisis Aliran Fluida Profesional"
         jsonLd={structuredData}

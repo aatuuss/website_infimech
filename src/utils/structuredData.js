@@ -183,7 +183,7 @@ export const getProfessionalServiceSchema = () => ({
  */
 export const getCFDServiceSchema = () => ({
   '@type': 'Service',
-  '@id': `${SITE_URL}/simulasi-cfd#service`,
+  '@id': `${SITE_URL}/jasa-simulasi-cfd#service`,
   'serviceType': 'Jasa Simulasi CFD',
   'name': 'Jasa Simulasi CFD (Computational Fluid Dynamics)',
   'description': 'Layanan jasa simulasi CFD profesional untuk analisis aliran fluida dengan teknologi terdepan. Kami menggunakan OpenFOAM berlisensi GNU untuk memberikan solusi simulasi yang akurat dan terpercaya untuk berbagai industri termasuk maritim, dirgantara, energi, kimia, konstruksi, dan lingkungan.',
