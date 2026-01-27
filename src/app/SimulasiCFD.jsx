@@ -1,4 +1,6 @@
 import React from "react";
+import SEO from "../components/SEO";
+import { getCFDServiceSchema, getCFDFAQSchema, getBreadcrumbSchema } from "../utils/structuredData";
 
 export default function SimulasiCFD() {
 
@@ -47,8 +49,27 @@ export default function SimulasiCFD() {
     }
   ];
 
+  // Structured data for CFD service page - optimized for AI search
+  const structuredData = [
+    getCFDServiceSchema(),
+    getCFDFAQSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', url: 'https://infimech.tech' },
+      { name: 'Jasa Simulasi CFD', url: 'https://infimech.tech/simulasi-cfd' }
+    ])
+  ];
+
   return (
     <div>
+      <SEO
+        title="Jasa Simulasi CFD - Computational Fluid Dynamics Indonesia"
+        description="Jasa simulasi CFD profesional untuk analisis aliran fluida dengan OpenFOAM berlisensi. Melayani industri maritim, dirgantara, energi, kimia, konstruksi. 100+ proyek sukses. Konsultasi gratis."
+        url="https://infimech.tech/simulasi-cfd"
+        image="https://infimech.tech/img/simulasicfd.jpg"
+        imageAlt="Jasa Simulasi CFD - Analisis Aliran Fluida Profesional"
+        jsonLd={structuredData}
+      />
+      
       {/* Hero Banner Section */}
       <div 
         className="relative w-full h-screen bg-cover bg-center flex items-center overflow-hidden"

@@ -1,73 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage - Highest priority -->
   <url>
     <loc>https://infimech.tech/</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://infimech.tech/home</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://infimech.tech/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- Main Service Pages - High priority for AI search -->
   <url>
     <loc>https://infimech.tech/servis</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+  
+  <!-- CFD Simulation Page - Critical for "jasa simulasi CFD" keyword -->
+  <url>
+    <loc>https://infimech.tech/simulasi-cfd</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
   <url>
     <loc>https://infimech.tech/specialities</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+  
   <url>
-    <loc>https://infimech.tech/chatbot</loc>
+    <loc>https://infimech.tech/contact</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+  
+  <!-- Experience/Portfolio Pages -->
   <url>
     <loc>https://infimech.tech/experince</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/experiencesPage</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- Detailed Experience Pages -->
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/1</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/2</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/3</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/4</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/5</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://infimech.tech/detailexperiencesPage/6</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

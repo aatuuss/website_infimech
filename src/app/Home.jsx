@@ -1,6 +1,11 @@
 import { useState } from "react";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
+import { 
+  getOrganizationSchema, 
+  getWebSiteSchema, 
+  getProfessionalServiceSchema 
+} from "../utils/structuredData";
 
 const SLIDES1 = [
   // ===== SLIDE 1 =====
@@ -249,8 +254,24 @@ export default function Home() {
     line2 = words.slice(1, words.length - 1).join(" ");
   }
 
+  // Structured data for AI Search Optimization
+  const structuredData = [
+    getOrganizationSchema(),
+    getWebSiteSchema(),
+    getProfessionalServiceSchema()
+  ];
+
   return (
     <section className="bg-[#FFFFFF]">
+      <SEO
+        title="Jasa Simulasi CFD & Engineering Services Indonesia"
+        description="Penyedia jasa simulasi CFD terkemuka di Indonesia. Layanan engineering consultancy meliputi CFD, FEA, thermal analysis untuk industri oil & gas, energi, dan petrokimia. 150+ proyek sukses."
+        url="https://infimech.tech"
+        image="https://infimech.tech/img/Logo1.png"
+        imageAlt="Infimech - Jasa Simulasi CFD dan Engineering Services"
+        jsonLd={structuredData}
+      />
+      
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[65vh] md:h-screen w-full overflow-hidden">
         <img

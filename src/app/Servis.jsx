@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from 'react';
+import SEO from '../components/SEO';
+import { getServiceListSchema, getBreadcrumbSchema } from '../utils/structuredData';
 
 export default function Servis() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,8 +49,26 @@ export default function Servis() {
   const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
+  // Structured data for services page
+  const structuredData = [
+    getServiceListSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', url: 'https://infimech.tech' },
+      { name: 'Services', url: 'https://infimech.tech/servis' }
+    ])
+  ];
+
   return (
     <>
+      <SEO
+        title="Engineering Services - CFD, FEA, Process Simulation"
+        description="Layanan engineering lengkap meliputi Regular Engineering (Process, Mechanical, Piping), Advanced Engineering (CFD, FEA, Digital Twin), dan Web-Based Project Management. Solusi untuk oil & gas, energi, petrokimia."
+        url="https://infimech.tech/servis"
+        image="https://infimech.tech/img/servis-hero.jpg"
+        imageAlt="Infimech Engineering Services"
+        jsonLd={structuredData}
+      />
+      
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
